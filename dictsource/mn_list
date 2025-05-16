@@ -84,7 +84,7 @@ _>      Ix tEmdEg_  // их тэмдэг (greater than sign)
 _       zUg'A:l dEf'is_ // зураас дефис (line hyphen) or just дефис (defis)
 $       d'Ol@r_     // доллар (dollar) // Also: тэмдэг (temdeg) for currency symbol in general context
 ₮       t2gr2g_     // төгрөг (tugrik - Mongolian currency symbol)
-_:       давхар цэг (davkhar tseg - double dot)
+_:      d;avhar tsEg_ //давхар цэг (davkhar tseg - double dot)
 ^       OrOj tEmdEg_ // орой тэмдэг (roof sign / circumflex) - descriptive
 _"      xAjmAr Kav'yytS;k@ // хаймар кавычка (paired quote) or ишлэлийн тэмдэг (ishleliin temdeg - quotation mark)
 _<      bAGA tEmdEg_ // бага тэмдэг (less than sign)
@@ -92,7 +92,7 @@ _<      bAGA tEmdEg_ // бага тэмдэг (less than sign)
 _{      fig'UUr@n xA:lt @tkr // фигуран хаалт (figure bracket open) - descriptive based on Russian
 _(      Eng'iin xA:lt @tkr // энгийн хаалт (simple bracket open) - descriptive
 _[      d2r_@lZIn xA:lt @tkr // дөрвөлжин хаалт (square bracket open) - descriptive
-_«       давхар хашилт нээх (davkhar khashilt neekh - double angle quote open)
+_«      d;avxar xA:lt ne'ex // давхар хашилт нээх (davkhar khashilt neekh - double angle quote open)
 +       n;EmEx_     // нэмэх (plus) $max3
 _       dO:GʊUr zʊr'A:s_ // доогуур зураас (underline) $max3
 %       xʊv;I_      // хувь (percent) $max3
@@ -109,8 +109,8 @@ _!      AngX'A:rʊ:lax tEmdEg_ // анхааруулах тэмдэг (exclamati
 _}      fig'UUr@n xA:lt xA:x // фигуран хаалт хаах (figure bracket close)
 _)      Eng'iin xA:lt xA:x // энгийн хаалт хаах (simple bracket close)
 _]      d2r_@lZIn xA:lt xA:x // дөрвөлжин хаалт хаах (square bracket close)
-_»      давхар хашилт хаах (davkhar khashilt khaakh - double angle quote close)
-* Od_         // од (star/asterisk) $max3
+_»      d;avxar xA:lt xA:x // давхар хашилт хаах (davkhar khashilt khaakh - double angle quote close)
+*       Od_  // од (star/asterisk) $max3
 _,      t_AslAl_    // таслал (comma)
 
 // Particles (approximate and may need specific stress rules/context)
@@ -224,7 +224,7 @@ _с      Es          // эс
 
 // Exceptions & Phrases
 // Stress in Mongolian is generally initial. Exceptions are rare or involve loanwords.
-сайн байна уу   s'Ajn b'AjnU: // Hello (common greeting)
+//сайн байна уу   s'Ajn b'AjnU: // Hello (common greeting)
 баярлалаа       bajarUlUl'A: // Thank you (note stress shift)
 төгрөг          t2gr2g_     // Tugrik (currency)
 Улаанбаатар     ʊlA:nb'A:tAr_ // Ulaanbaatar

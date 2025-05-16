@@ -16,6 +16,39 @@ phoneme g
 endphoneme
 
 
+phoneme G
+  import_phoneme base1/r"
+endphoneme
+
+phoneme U
+  vwl  starttype #o  endtype #o
+  length 170
+  FMT(vowel/uu)
+endphoneme
+
+phoneme V
+  vwl  starttype #o  endtype #o
+  ipa ʊ
+  length 140
+  ChangeIfDiminished(@)
+  FMT(vowel/o-_2)
+endphoneme
+
+phoneme 2
+  vwl starttype #o endtype #e
+  ipa œː
+  length 190
+  FMT(vdiph2/o@)
+endphoneme
+
+phoneme ʊ
+  vwl  starttype #o  endtype #o
+  ipa ʊ
+  length 140
+  ChangeIfDiminished(@)
+  FMT(vowel/o-_2)
+endphoneme
+
 phoneme p
   import_phoneme consonants/p-
 endphoneme

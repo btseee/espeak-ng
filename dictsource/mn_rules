@@ -170,7 +170,6 @@
 //  н (гPAL_VOW -> n; (e.g. хөнгөний -> ...n;g;...)
 //  н (гBACK_VOW -> NG (e.g. хангалтай -> ...NG...)
 // For now, a simpler set:
-    н ([кгх])   N   // Before к, г, х
     н           n   // Default 'н'
 
 .group о
