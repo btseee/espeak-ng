@@ -1,0 +1,237 @@
+// This file is UTF8 encoded
+// Mongolian (mn) list for eSpeak
+
+// Numbers
+_0      tkh;'ek;    // тэг (also нойл nojl from Russian, but тэг is native)
+?3 _0   tkh;Eg_     // (alternative for тэг)
+_1      n;Eg;       // нэг
+_1f     n;Eg;       // (Mongolian numbers generally don't have grammatical gender like Russian _1f)
+_2      xOj;Or_     // хоёр
+_2f     xOj;Or_     // (No specific feminine form like Russian _2f)
+_3      Gʊr;@v_     // гурав
+_4      d2r;@v_     // дөрөв
+_5      tav_        // тав
+_6      zʊrG'A:     // зургаа
+_7      dOl'O:      // долоо
+_8      n'Ajm_      // найм
+_9      jEs_        // ес
+_10     Ar;@v_      // арав
+_11     Ar;v@n n;Eg; // арван нэг
+_12     Ar;v@n xOj;Or_ // арван хоёр
+_13     Ar;v@n Gʊr;@v_ // арван гурав
+_14     Ar;v@n d2r;@v_ // арван дөрөв
+_15     Ar;v@n tav_   // арван тав
+_16     Ar;v@n zʊrG'A: // арван зургаа
+_17     Ar;v@n dOl'O: // арван долоо
+_18     Ar;v@n n'Ajm_ // арван найм
+_19     Ar;v@n jEs_  // арван ес
+_2X     xOr_;In_    // хорин
+_3X     GʊtS_;In_   // гучин
+_4X     d2tS_;In_   // дөчин
+_5X     tav_;In_    // тавин
+_6X     Zar;@n_     // жаран
+_7X     dal;@n_     // далан
+_8X     naj;@n_     // наян
+_9X     jEr;@n_     // ерэн
+_0C     zU:n_       // зуун
+_2C     xOj;Or zU:  // хоёр зуу
+_3C     Gʊr;v@n zU: // гурван зуу
+_4C     d2r;v@n zU: // дөрвөн зуу
+_5C     tav;@n zU:  // таван зуу
+_6C     zʊrG'A:n zU:n_ // зургаан зуун (зургаан зуу is also common)
+_7C     dOl'O:n zU:n_ // долоон зуун (долоон зуу)
+_8C     n'Ajm@n zU:n_ // найман зуун (найман зуу)
+_9C     jEs;@n zU:n_ // есөн зуун (есөн зуу)
+
+// Note: Mongolian uses "мянган" (nominative мянга) for thousand,
+// "сая" for million, "тэрбум" for billion, "их наяд" for trillion.
+// The forms _0MA1, _0M1 etc. might need careful adaptation based on Mongolian grammar if numbers combine with nouns in complex ways.
+// For simplicity, using the base forms here.
+
+_1MA1   m;jangG@    // мянга (one thousand - нэг мянга)
+_0MA1   m;jangG@    // мянга (thousands of - мянган)
+_0M1    m;jangG@    // мянга
+_1MA2   saj;@       // сая
+_0MA2   saj;@       // сая
+_0M2    saj;@       // сая
+_1MA3   t;erbʊm_    // тэрбум
+_0MA3   t;erbʊm_    // тэрбум
+_0M3    t;erbʊm_    // тэрбум
+_1MA4   Ix naj;@d_  // их наяд
+_0MA4   Ix naj;@d_  // их наяд
+_0M4    Ix naj;@d_  // их наяд
+
+// Decimal point related words
+// Mongolian might use "таслал" (taslal) for comma/decimal point, or "цэг" (tseg) for point.
+// "аравны" (aravni) - tenths, "зууны" (zuuni) - hundredths, "мянны" (myangiin) - thousandths
+_dpt    t_AslAl_    // таслал (comma, also used for decimal point)
+// For _dpt2, this is more complex as it depends on the number of decimal places.
+// e.g., "аравны нэг" (aravni neg) - 0.1, "зууны тав" (zuuni tav) - 0.05
+// A generic ending might not be straightforward.
+// Let's use a placeholder or a common way to say "point" as in "three point one four"
+_dpt    tsEg_       // цэг (point) - can be used like "гурван цэг нэг дөрөв" for 3.14
+_dpt2   Ar@vnY_     // аравны (tenths - if the fraction ends like "X tenths") - this is a guess
+
+// Symbols
+// Many symbol names might be borrowed from Russian or English, or have descriptive names.
+// This section will require more specific research for common Mongolian names.
+// Using some common ones or descriptive terms.
+_`      aks'Ent_    // акцент (from Russian)
+&       ampers'And_ // амперсанд (from English/Russian)
+_'      ap'ostrOf_ // апостроф (from Russian)
+\       UrUGUU zUr'A:s_ // уруу зураас (downwards line/backslash) - descriptive
+_>      Ix tEmdEg_  // их тэмдэг (greater than sign)
+_       zUg'A:l dEf'is_ // зураас дефис (line hyphen) or just дефис (defis)
+$       d'Ol@r_     // доллар (dollar) // Also: тэмдэг (temdeg) for currency symbol in general context
+₮       t2gr2g_     // төгрөг (tugrik - Mongolian currency symbol)
+_:       давхар цэг (davkhar tseg - double dot)
+^       OrOj tEmdEg_ // орой тэмдэг (roof sign / circumflex) - descriptive
+_"      xAjmAr Kav'yytS;k@ // хаймар кавычка (paired quote) or ишлэлийн тэмдэг (ishleliin temdeg - quotation mark)
+_<      bAGA tEmdEg_ // бага тэмдэг (less than sign)
+№       n'OmEr_     // номер (number sign, from Russian)
+_{      fig'UUr@n xA:lt @tkr // фигуран хаалт (figure bracket open) - descriptive based on Russian
+_(      Eng'iin xA:lt @tkr // энгийн хаалт (simple bracket open) - descriptive
+_[      d2r_@lZIn xA:lt @tkr // дөрвөлжин хаалт (square bracket open) - descriptive
+_«       давхар хашилт нээх (davkhar khashilt neekh - double angle quote open)
++       n;EmEx_     // нэмэх (plus) $max3
+_       dO:GʊUr zʊr'A:s_ // доогуур зураас (underline) $max3
+%       xʊv;I_      // хувь (percent) $max3
+=       t;Ents'U:   // тэнцүү (equals) $max3
+#       SAr_@:      // тор (grid/hash) - descriptive, or решотка (reshotka - from Russian)
+/       zUr'A:s_    // зураас (slash/line) or хуваах (khuvaakh - divide) $max3
+@       @t tEmdEg_  // @ тэмдэг ('at' sign) or имэйл хаягийн тэмдэг (email address sign)
+~       t;'il;d@    // тильда (tilde)
+_.      tsEg_       // цэг (dot/period)
+_;      tsEg_tEj t_AslAl_ // цэгтэй таслал (dot-with-comma / semicolon)
+_|      bOsl'O: zUr'A:s_ // босоо зураас (vertical line)
+_?      As'U:ltiin tEmdEg_ // асуултын тэмдэг (question mark)
+_!      AngX'A:rʊ:lax tEmdEg_ // анхааруулах тэмдэг (exclamation mark)
+_}      fig'UUr@n xA:lt xA:x // фигуран хаалт хаах (figure bracket close)
+_)      Eng'iin xA:lt xA:x // энгийн хаалт хаах (simple bracket close)
+_]      d2r_@lZIn xA:lt xA:x // дөрвөлжин хаалт хаах (square bracket close)
+_»      давхар хашилт хаах (davkhar khashilt khaakh - double angle quote close)
+* Od_         // од (star/asterisk) $max3
+_,      t_AslAl_    // таслал (comma)
+
+// Particles (approximate and may need specific stress rules/context)
+// Mongolian particles often attach as suffixes or clitics. Standalone particles are fewer.
+юм      jʊm $u      // (declarative particle, often "is")
+уу      ʊ: $u       // (interrogative particle - for yes/no questions, back vowel words)
+үү      u: $u       // (interrogative particle - for yes/no questions, front vowel words)
+вэ      vE $u       // (interrogative particle - for wh-questions)
+нь      n;I $u      // (definite particle)
+ч       tS;@ $u     // (also, even)
+л       l@ $u       // (just, only)
+даа     dA: $u      // (emphatic/mildly persuasive)
+шүү     SU: $u      // (emphatic, "indeed", "mind you")
+
+// Prepositions (Mongolian uses postpositions primarily, and case suffixes)
+// For words that function somewhat like prepositions in English:
+дээр    d'e:r      // on, above (functions as a postposition or noun)
+доор    d'O:r      // under, below (postposition/noun)
+хажууд  xadZ'U:d   // beside, next to (postposition/noun)
+өмнө    2mn@_       // before, in front of (postposition/noun)
+ард     Ard_        // behind (postposition/noun)
+руу     rU: $u      // towards (directional suffix/postposition)
+-аас    A:s $u      // from (ablative case suffix, many forms based on harmony)
+-д      d@ $u       // to, at, in (locative/dative case suffix, many forms)
+
+// Conjunctions
+ба      ba $u       // and (mostly for joining single words or short phrases)
+бөгөөд  b2g'2:d $pause // and, and also (more formal, for clauses)
+буюу    bʊj'U: $pause // or (alternative)
+эсвэл   Esv'El $pause // or (choice)
+харин   xar;'In $pause // but, however
+гэхдээ  gExd'e: $pause // but, although
+тийм    t;'i:m $u    // so, thus (can be used as "yes")
+учраас  ʊtSr'A:s $pause // because
+
+// Questions (interrogative pronouns/adverbs)
+хэн     xEn $pause  // who
+юу      jU: $pause  // what
+хаана   xA:n@ $pause // where
+хэзээ   xEz'e: $pause // when
+яагаад  jA:G'A:d $pause // why
+яаж    jA:Z $pause   // how
+хичнээн xItSn'e:n $pause // how much/many
+
+// Misc.
+үгүй    uG'uj      // no, not (negative particle/verb)
+биш     bIS_        // not (used with nouns/adjetives, "is not X")
+байна   b'Ajn@      // is/are (present tense of "to be")
+байгаа  b'AjGA:     // is/are (present continuous/existential)
+мөн     m2n_        // also, is indeed (affirmative)
+за      za          // okay, well (interjection)
+
+// Auxiliary Verbs (forms of "байх" - to be, "чадах" - can, etc.)
+// This requires extensive listing of conjugated forms if to be thorough.
+// Basic forms:
+байх    b'Ajx       // to be
+чадах   tSad;@x_    // to be able to, can
+// Example forms (unstressed if auxiliary)
+байна   b'Ajn@ $u1  // is (present for 'to be')
+байгаа  b'AjGA: $u1 // is being, exists
+байсан  b'Ajs@n $u1 // was
+болно   bOl;@n $u1  // will be, possible
+чадна   tSad;@n@ $u1 // can
+чадсан  tSad;@s@n $u1 // could
+
+// Cyrillic letter names (as per sources like Wikipedia and MongolianLanguage.mn)
+// IPA often shows /ə/ or /ɪ/ for the short vowel in names like "бэ", "гэ"
+// but the eSpeak `E` (as in bet) or `I` (as in bit) might be closer than a generic schwa.
+// The final vowel in "аа", "оо" needs to be represented as a short vowel or a specific eSpeak vowel.
+а       A:          // а
+_б      bE          // бэ
+б       bE $atend
+_в      vE          // вэ
+в       vE $atend
+г       gE          // гэ
+д       dE          // дэ
+е       jE          // е
+ё       jO          // ё
+_ж      ZE          // жэ
+ж       ZE $atend
+з       dzE         // зэ (often [dz] not just [z])
+и       i:          // и
+й       xAg;@s i:   // хагас и (half i)
+_к      kA          // ка (often with aspiration [kʰa])
+к       kA $atend
+л       El;         // эл
+?3 л    El^
+м       Em          // эм
+н       En          // эн
+о       O           // о
+ө       2           // ө (like German ö, French eu)
+п       pE          // пэ (often with aspiration [pʰe])
+р       Er          // эр
+_с      Es          // эс
+с       Es $atend
+т       tE          // тэ (often with aspiration [tʰe])
+у       ʊ           // у
+ү       u           // ү (like German ü, French u)
+ф       Ef          // эф (or fE)
+х       xE          // хэ (or xA)
+ц       tsE         // цэ (often with aspiration [tsʰe])
+ч       tSE         // чэ (often with aspiration [tʃʰe])
+ш       SA          // ша (or ES)
+щ       StSA        // ща (or эсчэ - es-che, reflecting its components ш+ч; often pronounced like ш in Mongolian)
+ъ       xAt'U:gi:n tEmdEg_ // хатуугийн тэмдэг (hard sign)
+ы       Er ug;i:n Y // эр үгийн ы (masculine word's ы - its function) or just Y
+ь       z2:ln;i: tEmdEg_ // зөөлний тэмдэг (soft sign)
+э       E           // э
+ю       jU          // ю
+я       jA          // я
+
+// Exceptions & Phrases
+// Stress in Mongolian is generally initial. Exceptions are rare or involve loanwords.
+сайн байна уу   s'Ajn b'AjnU: // Hello (common greeting)
+баярлалаа       bajarUlUl'A: // Thank you (note stress shift)
+төгрөг          t2gr2g_     // Tugrik (currency)
+Улаанбаатар     ʊlA:nb'A:tAr_ // Ulaanbaatar
+
+// Phrases - from the Russian list for structure, adapt with Mongolian if direct equivalents exist.
+// This section would benefit from common Mongolian fixed phrases that might have specific intonation.
+// (вряд ли) - Mongolian equivalent perhaps "бараг л үгүй" (barag l ügüi) or "эргэлзээтэй" (ergelzeetei)
+// (наконец-то) - "эцэст нь" (etstest ni), "ашгүй дээ" (ashgüi dee)
+
+// Add more as needed based on testing and refinement.

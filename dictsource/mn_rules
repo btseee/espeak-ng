@@ -1,0 +1,313 @@
+// Mongolian Cyrillic translation rules for eSpeak
+// This file is UTF8 encoded
+
+// Character set definitions (conceptual - eSpeak uses direct letter matching or predefined sets)
+// A: а э и о у ө ү ы е ё ю я (all letters resulting in vowel sounds)
+// Vbase: а э и о у ө ү ы (core vowel characters)
+// C: б в г д ж з й к л м н п р с т ф х ц ч ш щ ъ ь (all consonant characters)
+// VOICED_OB: б в г д ж з
+// UNVOICED_OB: п ф к т с ш х ц ч щ
+// SON: м н л р й
+// PAL_VOW: е ё и ю я (vowels that cause/indicate palatalization or start with j)
+// SOFT: ь
+// HARD: ъ
+// FRONT_V_CHAR: э ө ү (front vowel characters for consonant allophony)
+// BACK_V_CHAR: а о у ы (back vowel characters for consonant allophony)
+
+
+// Notes:
+// - Phonetic transcriptions are based on the mn_list attempt.
+// - Stress is generally initial in Mongolian; these rules don't assign stress.
+// - Vowel reduction in unstressed syllables is complex and might need more dictionary entries.
+// - `GV` means 'г' before a back vowel (resulting in uvular G).
+// - `GF` means 'г' before a front vowel (resulting in velar g).
+// - `NV` means 'н' word-finally or before velar/uvular (resulting in N).
+// - Palatalization is generally `C;` (consonant + semicolon).
+
+.group а
+    а       a       // Basic 'a' sound, assuming short, stressed/clear
+// Longer 'aa' would be ideally handled by the _list or if eSpeak handles double letters by default.
+// If 'а' is unstressed and reduced, it might become '@'. This rule is for the base.
+// Example from ru_rules:
+//  A) а (_    V     // After a vowel, word final - different quality?
+//  _) а       a     // Word initial
+//  а (_     a     // Word final
+
+.group б
+    б (PAL_VOW  b;  // б + е, ё, и, ю, я -> bja, bjo, bi, bju, bja
+    б (SOFT     b;  // бь -> b;
+    б (_        p   // Word-final devoicing: б -> п
+    б (UNVOICED_OB p // Assimilation: б + к -> пк
+    б           b   // Default б
+
+.group в
+    в (PAL_VOW  w;  // Palatalized 'в' (as [wʲ])
+    в (SOFT     w;  // вь -> w;
+// Devoicing of 'в' to 'ф' ([f]) is common in Russian, less so if Mongolian 'в' is consistently [w].
+// If 'в' can also be [v], more rules are needed.
+    в (_        f   // Optional: Word-final devoicing if pronounced [v] sometimes
+    в (UNVOICED_OB f // Optional: Assimilation if [v]
+    в           w   // Default 'в' as [w]
+
+.group г
+// This is complex due to front/back vowel allophony [g]/[ɢ]
+// Assuming PAL_VOW includes 'и', 'е' which are fronting
+    г (PAL_VOW  g;  // г + front palatalizing vowel (ге, ги, гө, гү) -> g;+vowel
+    г (SOFT     g;  // гь -> g; (palatalized velar)
+    г (FRONT_V_CHAR g // г + э, ө, ү -> g (velar g)
+    г (BACK_V_CHAR G // г + а, о, у, ы -> G (uvular G)
+    г (_        k   // Word-final devoicing (velar г -> к)
+    г (UNVOICED_OB k // Assimilation (velar г + п -> кп)
+// How to handle default if context isn't one of these? Needs a fallback.
+// Perhaps default to 'g' and have specific 'G' rules.
+// Let's try specific first:
+    г (а        G
+    г (о        G
+    г (у        G
+    г (ы        G
+    г (э        g
+    г (ө        g
+    г (ү        g
+    г (я        G;a // гя -> [ɢʲa] or [gja] - assume back context for 'я' vowel part
+    г (е        g;e // ге -> [gʲe]
+    г (ё        G;o // гё -> [ɢʲo] or [gjo]
+    г (ю        G;u // гю -> [ɢʲu] or [gju]
+    г (и        g;i // ги -> [gʲi]
+// This implies 'я, ё, ю' need to be treated based on their vowel component's backness for 'г'.
+// For now, let 'G' be default if no front vowel context.
+    г           G   // Default to uvular G if no other rule matches (common in back-vowel words)
+
+.group д
+    д (PAL_VOW  d;
+    д (SOFT     d;
+    д (_        t   // Word-final devoicing
+    д (UNVOICED_OB t // Assimilation
+    д           d
+
+.group е // Similar to Russian 'е'
+// A) е (_    ;e  // After vowel, word final (Russian specific reduction?)
+// A) е        je  // After vowel
+// _) е        je  // Word initial
+// HARD) е     je  // After ъе
+// SOFT) е     je  // After ье
+// C) е        ;e  // After consonant: palatalizes C + e (e.g. те -> t;e)
+    _) е        jE  // Word initial: е -> е
+    Vbase) е    jE  // After a base vowel: ае -> ае
+    HARD) е     jE  // ъе -> е
+    SOFT) е     jE  // ье -> е (already palatalized C + е)
+// After consonant, 'е' palatalizes the consonant and is pronounced 'E'.
+// The palatalization of the consonant is handled in the consonant's rules (e.g. т(е -> t;).
+// So 'е' itself just becomes 'E' after a consonant.
+    C) е        E   // Example: те -> т(E) -> t;E
+
+.group ё // Similar to Russian 'ё'
+    _) ё        jO  // Word initial: ё -> йо
+    Vbase) ё    jO  // After a base vowel: аё -> айо
+    HARD) ё     jO  // ъё -> йо
+    SOFT) ё     jO  // ьё -> йо
+    C) ё        O   // After consonant: e.g. тё -> т(O) -> t;O (stress usually on 'ё')
+
+.group ж
+// 'ж' in Mongolian is often [dʒ] (voiced affricate) or [ʒ] (voiced fricative). Let's use Z (for [ʒ]) for now.
+// It doesn't typically palatalize further with 'ь' in the same way 'т' would become 'ть'.
+    ж (PAL_VOW  Z   // No strong palatalization like т->ть; жи, же are ZI, ZE
+    ж (SOFT     Z
+    ж (_        S   // Word-final devoicing: ж -> ш
+    ж (UNVOICED_OB S // Assimilation
+    ж           Z   // Default [ʒ]
+
+.group з
+    з (PAL_VOW  dz; // Or z; if /z/ is the phoneme. Assuming /dz/ so dz;
+    з (SOFT     dz;
+    з (_        ts  // Word-final devoicing: з -> ц
+    з (UNVOICED_OB ts // Assimilation
+    з           dz  // Default as voiced affricate [dz] (can also be [z])
+
+.group и
+// 'и' can palatalize a preceding consonant.
+// Its own sound is 'i' (could be front [i] or slightly retracted depending on harmony).
+// H) и        y   // Russian: after hard consonant ж,ш,ц -> ы
+// Mongolian 'ж, ш, ц' are not "hard" in the same way for 'и'. 'Жи, ши, ци' are common.
+    и           i   // Default 'и'
+// Reduction of 'и' to 'I' (lax) or '@' (schwa) in unstressed non-initial syllables is common.
+// These rules give the full vowel. Dictionary for reduced forms.
+
+.group й
+    й           j   // Always [j]
+
+.group к
+// Needs allophony for front/back context if aspiration or exact place of articulation changes.
+// For now, simple 'k'. Aspiration [kʰ] is common.
+    к (PAL_VOW  k;  // Palatalized 'к'
+    к (SOFT     k;
+    к (VOICED_OB g  // Assimilation: к + б -> гб (less common than devoicing, but possible)
+// If к becomes strongly uvular [q] with back vowels, another symbol would be needed.
+// For now, 'k' is velar.
+    к           k
+
+.group л
+    л (PAL_VOW  l;
+    л (SOFT     l;
+    л           l
+
+.group м
+    м (PAL_VOW  m;
+    м (SOFT     m;
+    м           m
+
+.group н
+// Allophony: [n] vs. [ŋ] (velar nasal)
+// [ŋ] typically word-finally or before к, г, х (velar/uvulars)
+    н (PAL_VOW  n;  // Palatalized 'н'
+    н (SOFT     n;
+    н (_        N   // Word-final: н -> ң ([N])
+    н (к        N   // н + к -> ңк
+    н (г        N   // н + г -> ңг (needs to check if g or G context)
+    н (х        N   // н + х -> ңх
+// How to differentiate н(г as in 'хангал' (back) vs. 'хөнгөн' (front suffix on front root)?
+// The 'г' rule itself changes based on following vowel. If 'н' precedes, it should adapt.
+// This might need lookahead that eSpeak rules can do.
+//  н (гPAL_VOW -> n; (e.g. хөнгөний -> ...n;g;...)
+//  н (гBACK_VOW -> NG (e.g. хангалтай -> ...NG...)
+// For now, a simpler set:
+    н ([кгх])   N   // Before к, г, х
+    н           n   // Default 'н'
+
+.group о
+    о           O   // Basic 'о'
+// Reduction if unstressed.
+
+.group ө
+    ө           2   // Phoneme for ө (e.g., German ö)
+
+.group п
+// Aspiration [pʰ] common.
+    п (PAL_VOW  p;
+    п (SOFT     p;
+    п (VOICED_OB b  // Assimilation: п + д -> бд
+    п           p
+
+.group р
+    р (PAL_VOW  r;
+    р (SOFT     r;
+// 'р' might devoice slightly word-finally next to unvoiced C, but generally remains voiced.
+    р           r
+
+.group с
+    с (PAL_VOW  s;
+    с (SOFT     s;
+    с (VOICED_OB z  // Assimilation: с + б -> зб
+    с           s
+
+.group т
+// Aspiration [tʰ] common.
+    т (PAL_VOW  t;
+    т (SOFT     t;
+    т (VOICED_OB d  // Assimilation: т + г -> дг
+    т           t
+
+.group у
+    у           ʊ   // Basic 'у' (like 'oo' in book)
+// Reduction if unstressed.
+
+.group ү
+    ү           u   // Phoneme for ү (e.g., German ü)
+
+.group ф
+// Mainly in loanwords.
+    ф (PAL_VOW  f;
+    ф (SOFT     f;
+    ф (VOICED_OB v  // Assimilation
+    ф           f
+
+.group х
+// Allophony: Velar [x] with front vowels, Uvular [χ] with back vowels.
+// Let's use 'x' for velar, 'X' for uvular (if eSpeak has a distinct sound, else use 'x' for both and accept approximation).
+// For now, using 'x' as a general voiceless fricative.
+    х (PAL_VOW  x;  // Palatalized 'х' (e.g., хи -> [xʲi])
+    х (SOFT     x;
+// If 'х' has uvular variant 'X':
+//  х (BACK_V_CHAR X
+//  х (FRONT_V_CHAR x
+    х           x   // Default
+
+.group ц
+// Affricate [tsʰ] (aspirated).
+    ц (PAL_VOW  ts; // Palatalized 'ц' (rare, as и, е after ц are common without full palatalization of ц itself)
+    ц (SOFT     ts; // ць
+    ц (VOICED_OB dz // Assimilation: ц + д -> дз д
+    ц           ts
+
+.group ч
+// Affricate [tʃʰ] (aspirated). Typically "soft" or palatal by nature.
+// Further palatalization by 'ь' or 'и' is usually not contrastive.
+    ч           tS
+
+.group ш
+// Postalveolar [ʃ]. Typically "soft" or palatal by nature.
+    ш           S
+
+.group щ
+// From Russian, pronounced [ʃtʃ] or often simplified.
+// For Mongolian, often simplified to [ʃtʃ], [ʃS], or even just [S].
+    щ           StS // Approximation of [ʃtʃ]
+// Or:
+//  щ           S;tS; (if needing explicit palatalization markers)
+//  щ           S     (if heavily simplified in Mongolian context)
+
+.group ъ (Hard Sign)
+// Typically silent itself but affects interpretation of following vowel.
+// Ensures a following 'е, ё, ю, я' starts with a clear 'j' glide and the preceding consonant is NOT palatalized.
+// Its effect is mostly on how the following vowel is handled (see rules for е, ё, ю, я using HARD context).
+    ъ           _   // Generally silent, or a very slight pause/glottal stop in some systems.
+                    // eSpeak might treat it as a boundary.
+
+.group ы
+    ы           Y   // Back, unrounded vowel
+
+.group ь (Soft Sign)
+// Palatalizes the preceding consonant. This is handled in consonant rules like C(SOFT -> C;
+// If it's word final, it's just the palatalization.
+// If ь is followed by a vowel, it often inserts 'j'. E.g., 'солью' -> sol'.ju (Russian)
+// Mongolian examples: барья -> бар + ь + я -> bar;ja
+// SOFT) J_VOW -> j + VOWEL_SOUND (e.g. ью -> ju, ья -> ja)
+    ь (е        jE // ье -> йе
+    ь (ё        jO // ьё -> йо
+    ь (ю        jU // ью -> йу
+    ь (я        jA // ья -> йа
+    ь           ;   // Default effect: palatalization marker (applied to preceding C)
+                    // If it doesn't precede a vowel, it just marks palatalization of prior C.
+
+.group э
+    э           E   // Basic 'э'
+
+.group ю // Similar to Russian 'ю'
+    _) ю        jU  // Word initial
+    Vbase) ю    jU  // After a base vowel
+    HARD) ю     jU  // After ъ
+    SOFT) ю     jU  // After ь (consonant already palatalized, then jU)
+    C) ю        U   // After consonant: e.g. тю -> т(U) -> t;U
+
+.group я // Similar to Russian 'я'
+    _) я        jA  // Word initial
+    Vbase) я    jA  // After a base vowel
+    HARD) я     jA  // After ъ
+    SOFT) я     jA  // After ь
+    C) я        a   // After consonant: e.g. тя -> т(a) -> t;a (sound is 'a', palatalization on C)
+// Unstressed 'я' can reduce to 'i' or schwa in Russian. Mongolian might be similar.
+//  я (_        @   // Example of word-final unstressed reduction (if applicable)
+
+.group
+// This section is for any remaining characters or general rules.
+// For Mongolian, all Cyrillic letters should be covered above.
+// Could add rules for common consonant clusters if they have idiosyncratic pronunciations
+// not covered by simple assimilation. E.g.:
+//  сч          StS // Or S; if that's the pronunciation of 'сч' cluster in Mongolian
+//  зч          ZtS // Or Z;
+
+// Default stress rule placeholder (eSpeak usually has a language-specific default)
+// stress       1   // Stress on the first syllable (typical for Mongolian)
+
+// Vowel reduction rules could be attempted here but are very complex.
+// E.g., a rule that says 'a' in a non-initial syllable becomes '@'
+// This would look like: C A C) a (C A -> @  (this syntax is illustrative)

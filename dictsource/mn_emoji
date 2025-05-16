@@ -1,0 +1,345 @@
+// Emoji and Other Symbol pronunciations for Mongolian
+//
+// Entries with `text|emoji` in the comments have text and emoji forms. They
+// can be followed by [FE0E] to select the text style, and [FE0F] to select
+// the emoji style.
+//
+// Entries with 'other' in the comments are not defined as emoji, but are other
+// Unicode characters.
+//
+// NOTE: See `src/ucd-tools/data/espeak-ng/emoji-data.txt` for additional data
+// in interpreting ZWJ emoji sequences.
+//
+// Translations are best-effort and may need colloquial adjustments.
+// Some terms are direct translations, others are descriptive.
+
+$textmode
+
+// 0000..007F : C0 Controls and Basic Latin
+
+//+ plus                                // [002B] other (нэмэх)
+
+// 0080..00FF : C1 Controls and Latin-1 Supplement
+
+//¢ cents                               // [00A2] other (цент)
+//£ pound                               // [00A3] other (фунт)
+//¤ currency sign                       // [00A4] other (валютын тэмдэг)
+//¥ yen                                 // [00A5] other (иен)
+//§ section                             // [00A7] other (зүйл)
+//¨ double dot                          // [00A8] other (давхар цэг)
+©   зохиогчийн эрхийн тэмдэг             // [00A9] text|emoji (Zokhiogchiin erkhiin temdeg)
+//¬ not sign                            // [00AC] other (үгүйсгэл тэмдэг)
+®   бүртгэгдсэн барааны тэмдэг          // [00AE] text|emoji (Bürtgegdsen baraany temdeg)
+//° degrees                             // [00B0] other (градус)
+//± plus or minus                       // [00B1] other (нэмэх хасах)
+//µ micro                               // [00B5] other (микро)
+//¶ paragraph                           // [00B6] other (догол мөр)
+//¼ a quarter                           // [00BC] other (дөрөвний нэг)
+//½ a half                              // [00BD] other (хагас)
+//¾ three quarters                      // [00BE] other (дөрөвний гурав)
+//× times                               // [00D7] other (үржих)
+//÷ divided by                          // [00F7] other (хуваах)
+
+// 02B0..02FF : Spacing Modifier Letters
+
+//˙ dot                                 // [02D9] other (цэг)
+
+// 2000..203C : General Punctuation
+
+‼   давхар анхаарлын тэмдэг             // [203C] text|emoji (Davkhar ankhaarlyn temdeg)
+⁉   анхаарлын болон асуултын тэмдэг     // [2049] text|emoji (Ankhaarlyn bolon asuultyn temdeg)
+
+// 20A0..20CF : Currency Symbols
+
+//₮ tugrik                              // [20AE] other (төгрөг - Mongolian Tugrik already in mn_list)
+//€ euros                               // [20AC] other (евро)
+//₹ rupee                               // [20B9] other (рупи)
+
+// 2100..214F : Letterlike Symbols
+
+//№ numero                              // [2116] other (дугаар, номер)
+//℞ prescription                        // [211E] other (жор)
+™   барааны тэмдэг                      // [2122] text|emoji (Baraany temdeg)
+ℹ   мэдээллийн тэмдэг                   // [2139] text|emoji (Medeeleliin temdeg)
+
+// 2150..218F : Number Forms
+
+//⅓ one third                           // [2153] other (гурвын нэг)
+//⅔ two thirds                          // [2154] other (гурвын хоёр)
+
+// 2190..21FF : Arrows
+
+//← left arrow                          // [2190] other (зүүн сум)
+//↑ up arrow                            // [2191] other (дээшээ сум)
+//→ right arrow                         // [2192] other (баруун сум)
+//↓ down arrow                          // [2193] other (доошоо сум)
+↔   зүүн баруун сум                     // [2194] text|emoji (Züün baruun sum)
+↕   дээш доош сум                       // [2195] text|emoji (Deesh doosh sum)
+↖   зүүн дээд сум                       // [2196] text|emoji (Züün deed sum)
+↗   баруун дээд сум                     // [2197] text|emoji (Baruun deed sum)
+↘   баруун доод сум                     // [2198] text|emoji (Baruun dood sum)
+↙   зүүн доод сум                       // [2199] text|emoji (Züün dood sum)
+↩   зүүн эргэлттэй баруун сум           // [21A9] text|emoji (Züün ergelettei baruun sum)
+↪   баруун эргэлттэй зүүн сум           // [21AA] text|emoji (Baruun ergelettei züün sum)
+
+// 2200..22FF : Mathematical Operators
+
+//∂ delta                               // [2202] other (дельта)
+//∑ sum sign                            // [2211] other (нийлбэр тэмдэг)
+//− minus                               // [2212] other (хасах)
+//∗ asterisk                            // [2217] other (од)
+//√ square root                         // [221A] other (квадрат язгуур)
+//∛ cube root                           // [221B] other (куб язгуур)
+//∝ proportional to                     // [221D] other (пропорционал)
+//∞ infinity                            // [221E] other (хязгааргүй)
+//∫ integral                            // [222B] other (интеграл)
+//∬ double integral                     // [222C] other (давхар интеграл)
+//∴ therefore                           // [2234] other (иймээс)
+//∵ because                             // [2235] other (учир нь)
+//≈ approximately                       // [2248] other (ойролцоогоор)
+//≠ not equal to                        // [2260] other (тэнцүү биш)
+//≡ identical to                        // [2261] other (адилхан)
+//≤ less or equal to                    // [2264] other (бага буюу тэнцүү)
+//≥ greater or equal to                 // [2265] other (их буюу тэнцүү)
+
+// 2300..23FF : Miscellaneous Technical
+
+⌚   бугуйн цаг                          // [231A] (Buguin tsag)
+⌛   элсэн цаг                           // [231B] (Elsen tsag)
+⌨   гар                                 // [2328] text|emoji (Gar)
+⏏   гаргах товч                         // [23CF] text|emoji (Gargakh tovch)
+⏩   хурдан урагшлуулaх                  // [23E9] (Khurdan uragshluulakh)
+⏪   хурдан ухраах                       // [23EA] (Khurdan ukhraakh)
+⏫   дээшээ давхар сум                   // [23EB] (Deeshee davkhar sum)
+⏬   доошоо давхар сум                   // [23EC] (Dooshoo davkhar sum)
+⏭   дараагийн бичлэг                    // [23ED] text|emoji (Daraagiin bichleg)
+⏮   өмнөх бичлэг                        // [23EE] text|emoji (Ömnökh bichleg)
+⏯   тоглуулах түр зогсоох               // [23EF] text|emoji (Togloolakh tür zogsookh)
+⏰   сэрүүлэгтэй цаг                     // [23F0] (Serüülegei tsag)
+⏱   секундомер                          // [23F1] text|emoji (Sekundomer)
+⏲   цаг хэмжигч                         // [23F2] text|emoji (Tsag khemjigch)
+⏳   урсaж буй элсэн цаг                 // [23F3] (Ursaj bui elsen tsag)
+⏸   түр зогсоох товч                    // [23F8] text|emoji (Tür zogsookh tovch)
+⏹   зогсоох товч                        // [23F9] text|emoji (Zogsookh tovch)
+⏺   бичлэг хийх товч                    // [23FA] text|emoji (Bichleg khiikh tovch)
+
+// 2460..24FF : Enclosed Alphanumerics
+
+Ⓜ   М үсэг дугуйд                       // [24C2] text|emoji (M üseg duguyd)
+
+// 25A0..25FF : Geometric Shapes
+
+//■ black square                        // [25A0] other (хар дөрвөлжин)
+▪   жижиг хар дөрвөлжин                 // [25AA] text|emoji (Jijig khar dörvöljin)
+▫   жижиг цагаан дөрвөлжин              // [25AB] text|emoji (Jijig tsagaan dörvöljin)
+▶   тоглуулах                           // [25B6] text|emoji (Togloolakh)
+◀   ухраах                              // [25C0] text|emoji (Ukhraakh)
+//● black circle                        // [25CF] other (хар дугуй)
+◻   цагаан дөрвөлжин                    // [25FB] text|emoji (Tsagaan dörvöljin)
+◼   хар дөрвөлжин                       // [25FC] text|emoji (Khar dörvöljin)
+◽   дунд зэргийн цагаан дөрвөлжин       // [25FD] (Dund zergiin tsagaan dörvöljin)
+◾   дунд зэргийн хар дөрвөлжин          // [25FE] (Dund zergiin khar dörvöljin)
+
+// 2600..26FF : Miscellaneous Symbols
+
+☀   нар                                 // [2600] text|emoji (Nar)
+☁   үүл                                 // [2601] text|emoji (Üül)
+☂   шүхэр                               // [2602] text|emoji (Shükher)
+☃   цасан хүн                           // [2603] text|emoji (Tsasan khün)
+☄   сүүлт од                             // [2604] text|emoji (Süült od)
+☎   утас                                // [260E] text|emoji (Utas)
+☑   чагттай дөрвөлжин                    // [2611] text|emoji (Chagttai dörvöljin)
+☔   бороотой шүхэр                      // [2614] (Borootoi shükher)
+☕   халуун уух зүйл                     // [2615] (Khaluun uukh züil)
+☘   хошоонгор                           // [2618] text|emoji (Khoshongor)
+☝   долоовор хуруу гозойлгох            // [261D] text|emoji (Doloovor khuruu gozoilgokh)
+☠   гавлын яс ба хөндлөн яс             // [2620] text|emoji (Gavlyn yas ba khöndlön yas)
+☢   цацраг идэвх                        // [2622] text|emoji (Tsatsrag idevkh)
+☣   биологийн аюул                      // [2623] text|emoji (Biologiin ayul)
+☦   ортодокс загалмай                   // [2626] text|emoji (Ortodoks zagalmai)
+☪   хавирган сар ба од                  // [262A] text|emoji (Khavirgan sar ba od)
+☮   энх тайвны бэлгэдэл                 // [262E] text|emoji (Enkh taivny belgdel)
+☯   инь ян                              // [262F] text|emoji (In yan)
+☸   номын хүрд                          // [2638] text|emoji (Nomyn khürd)
+☹   гунигтай царай                      // [2639] text|emoji (Gunigtai tsarai)
+☺   инээмсэглэсэн царай                 // [263A] text|emoji (Ineemseglesen tsarai)
+♀   эмэгтэй хүний тэмдэг                // [2640] text|emoji (Emegtei khünii temdeg)
+♂   эрэгтэй хүний тэмдэг                // [2642] text|emoji (Eregtei khünii temdeg)
+♈   хонь орд                            // [2648] (Khon ord)
+♉   үхэр орд                            // [2649] (Ükher ord)
+♊   ихэр орд                            // [264A] (Ikher ord)
+♋   мэлхий орд                          // [264B] (Melkhii ord)
+♌   арслан орд                          // [264C] (Arslan ord)
+♍   охин орд                            // [264D] (Okhin ord)
+♎   жинлүүр орд                         // [264E] (Jinlüür ord)
+♏   хилэнц орд                          // [264F] (Khilents ord)
+♐   нум орд                             // [2650] (Num ord)
+♑   матар орд                           // [2651] (Matar ord)
+♒   хумх орд                            // [2652] (Khumkh ord)
+♓   загас орд                           // [2653] (Zagas ord)
+♟   хүү                                 // [265F] text|emoji (Khüü)
+♠   гүн                                 // [2660] text|emoji (Gün) (хөзрийн)
+♣   цэцэг                               // [2663] text|emoji (Tsetseg) (хөзрийн)
+♥   бундан                              // [2665] text|emoji (Bundan) (хөзрийн)
+♦   дөрвөлжин                           // [2666] text|emoji (Dörvöljin) (хөзрийн)
+♨   халуун рашаан                       // [2668] text|emoji (Khaluun rashaan)
+//♭ flat                                // [266D] other (бемоль)
+//♯ sharp                               // [266F] other (диез)
+♻   дахин боловсруулах тэмдэг           // [267B] text|emoji (Dakhin bolovsruulakh temdeg)
+♾   хязгааргүй                          // [267E] text|emoji (Khiazgaargüi) - already have one for 221E, this is emoji version
+♿   хөгжлийн бэрхшээлтэй хүний тэмдэг   // [267F] (Khögjliin berkhsheeltei khünii temdeg)
+⚒   алх ба жоотуу                       // [2692] text|emoji (Alkh ba jootuu)
+⚓   зангуу                              // [2693] (Zanguu)
+⚔   солбисон сэлэм                      // [2694] text|emoji (Solbison selem)
+⚕   эмнэлгийн тэмдэг                    // [2695] text|emoji (Emnelgiin temdeg)
+⚖   жинлүүр                             // [2696] text|emoji (Jinlüür)
+⚗   нэрэх төхөөрөмж                     // [2697] text|emoji (Nerekh tökhöörömj)
+⚙   араа                                // [2699] text|emoji (Araa)
+⚛   атомын тэмдэг                       // [269B] text|emoji (Atomyn temdeg)
+⚜   геральдик сараана                   // [269C] text|emoji (Heraldik saraana)
+⚠   анхааруулгын тэмдэг                 // [26A0] text|emoji (Ankhaaruulgyn temdeg)
+⚡   цахилгаан                           // [26A1] (Tsakhilgaan)
+⚪   цагаан дугуй                        // [26AA] (Tsagaan dugui)
+⚫   хар дугуй                           // [26AB] (Khar dugui)
+⚰   авс                                 // [26B0] text|emoji (Avs)
+⚱   чандар сав                          // [26B1] text|emoji (Chandar sav)
+⚽   хөл бөмбөг                          // [26BD] (Khöl bömbög)
+⚾   бэйсбол                             // [26BE] (Beisbol)
+⛄   цасаар бүрхэгдээгүй цасан хүн       // [26C4] (Tasaar bürkhögdөөgüi tsasan khün)
+⛅   үүлний ард нар                      // [26C5] (Üülnii ard nar)
+⛈   аянгатай бороо                      // [26C8] text|emoji (Ayangatai boroo)
+⛎   могой баригч орд                    // [26CE] (Mogoi barigch ord)
+⛏   жоотуу                              // [26CF] text|emoji (Jootuu)
+⛑   цагаан загалмайтай хамгаалалтын малгай // [26D1] text|emoji (Tsagaan zagalmaitai khamgaalaltyn malgai)
+// ... To be continued for 1Fxxx ranges (main emoji ranges)
+
+// Example of 1Fxxx range (Faces)
+😀   инээж буй нүүр                      // [1F600] (Ineeej bui nüür)
+😃   том инээмсэглэлтэй нүүр             // [1F603] (Tom ineemsgleltei nüür)
+😄   инээмсэглэж буй нүдтэй инээж буй нүүр // [1F604] (Ineemsglej bui nüdtei ineej bui nüür)
+😁   гялалзсан нүдтэй инээж буй нүүр     // [1F601] (Gyalalzsan nüdtei ineej bui nüür)
+😆   нүдээ аньсан инээж буй нүүр          // [1F606] (Nüdee anisan ineej bui nüür)
+😅   хүйтэн хөлстэй инээж буй нүүр       // [1F605] (Khüiten khölstei ineej bui nüür)
+😂   баярласандаа уйлж буй нүүр          // [1F602] (Bayarlsandaa uilj bui nüür)
+🤣   шалбааг                               // [1F923] (Shalbaag) -> more like "rolling on the floor laughing" -> инээд алдах
+🙂   бага зэрэг инээмсэглэсэн нүүр       // [1F642] text|emoji (Baga zereg ineemsglelsen nüür)
+🙃   долигор инээмсэглэл                 // [1F643] (Doligor ineemsglel)
+😉   нүд ирмэж буй нүүр                  // [1F609] (Nüd irmej bui nüür)
+😊   инээмсэглэсэн нүдтэй инээмсэглэсэн нүүр // [1F60A] (Ineemsglelsen nüdtei ineemsglelsen nüür)
+😇   гэгээн царай                         // [1F607] (Gegeen tsarai)
+🥰   зүрхээр хүрээлэгдсэн инээмсэглэсэн нүүр // [1F970] (Zürkheer khüreelgdsen ineemsglelsen nüür)
+😍   зүрхэн нүдтэй инээмсэглэсэн нүүр     // [1F60D] (Zürkhen nüdtei ineemsglelsen nüür)
+🤩   одтой нүдтэй нүүр                   // [1F929] (Odtoi nüdtei nüür)
+😘   үнсэлт илгээж буй нүүр              // [1F618] (Ünselt ilgeej bui nüür)
+😗   үнсэж буй нүүр                      // [1F617] (Ünsej bui nüür)
+☺   инээмсэглэсэн царай                 // [263A] text|emoji (this is a duplicate from earlier, keeping for completeness)
+😚   нүдээ аньсан үнсэж буй нүүр          // [1F61A] (Nüdee anisan ünsej bui nüür)
+😙   инээмсэглэсэн нүдтэй үнсэж буй нүүр  // [1F619] (Ineemsglelsen nüdtei ünsej bui nüür)
+😋   амттай хоол идэж буй нүүр           // [1F60B] (Amttai khool idej bui nüür)
+😛   хэлээ гаргасан нүүр                 // [1F61B] (Khelee gargasan nüür)
+😜   хэлээ гаргаж нүд ирмэсэн нүүр       // [1F61C] (Khelee gargaj nüd irmsen nüür)
+🤪   тэнэг царай                         // [1F92A] (Teneg tsarai)
+😝   хэлээ гаргаж нүдээ аньсан нүүр      // [1F61D] (Khelee gargaj nüdee anisan nüür)
+🤑   мөнгөний нүүр                       // [1F911] (Möngönii nüür)
+🤗   тэвэрч буй нүүр                     // [1F917] (Teverch bui nüür)
+🤭   гараараа амаа дарсан нүүр           // [1F92D] (Garaaraa amaa darsan nüür)
+🤫   чимээгүй байхыг гуйж буй нүүр       // [1F92B] (Chimeegüi baikhig guij bui nüür)
+🤔   бодож буй нүүр                      // [1F914] (Bodoj bui nüür)
+🤐   амаа цахилгаандаж буй нүүр           // [1F910] (Amaa tsakhilgaandaj bui nüür)
+🤨   нэг хөмсгөө өргөсөн нүүр             // [1F928] (Neg khömsgöö örgösön nüür)
+😐   хувиралгүй царай                     // [1F610] text|emoji (Khuviralgüi tsarai)
+😑   илэрхийлэлгүй царай                 // [1F611] (Ilerkhiilelgüi tsarai)
+😶   амгүй нүүр                          // [1F636] (Amgüi nüür)
+😏   ёжтой инээмсэглэж буй нүүр           // [1F60F] (Yojtoi ineemsglej bui nüür)
+😒   сэтгэл дундуур царай                // [1F612] (Setgel unduur tsarai)
+🙄   нүдээ эргэлдүүлж буй царай           // [1F644] (Nüdee ergelduulj bui tsarai)
+😬   шүдээ ярзайлгасан нүүр              // [1F62C] (Shüdee yarzailgasan nüür)
+🤥   худалч нүүр (хамар нь урт)          // [1F925] (Khudalch nüür, khamar ni urt)
+// ... Animals
+🐶   нохойн нүүр                         // [1F436] (Nokhoin nüür)
+🐱   муурын нүүр                         // [1F431] (Muuryn nüür)
+🐭   хулганы нүүр                        // [1F42D] (Khulgany nüür)
+🐹   оготны нүүр                         // [1F439] (Ogotny nüür)
+🐰   туулайн нүүр                        // [1F430] (Tuulain nüür)
+🦊   үнэгний нүүр                        // [1F98A] (Ünegnii nüür)
+🐻   баавгайн нүүр                       // [1F43B] (Baavgain nüür)
+🐼   хулсны баавгайн нүүр                // [1F43C] (Khulsny baavgain nüür)
+🐨   коала                               // [1F428] (Koala)
+🐯   барын нүүр                          // [1F42F] (Baryn nüür)
+🦁   арслангийн нүүр                     // [1F981] (Arslangiin nüür)
+🐮   үхрийн нүүр                         // [1F42E] (Ükhriin nüür)
+🐷   гахайн нүүр                         // [1F437] (Gakhain nüür)
+🐸   мэлхийн нүүр                        // [1F438] (Melkhiin nüür)
+🐵   саррмагчин                          // [1F412] (Sarmagchin) -> сармагчны нүүр
+// ... Food
+🍇   усан үзэм                           // [1F347] (Usan üzem)
+🍈   гуа                                 // [1F348] (Gua)
+🍉   тарвас                              // [1F349] (Tarvas)
+🍊   мандарин                            // [1F34A] (Mandarin)
+🍋   нимбэг                              // [1F34B] (Nimbeg)
+🍌   гадил                               // [1F34C] (Gadil)
+🍍   хан боргоцой                        // [1F34D] (Khan borgotsoi)
+🥭   манго                               // [1F96D] (Mango)
+🍎   улаан алим                          // [1F34E] (Ulaan alim)
+🍏   ногоон алим                         // [1F34F] (Nogoon alim)
+🍐   лийр                                // [1F350] (Liir)
+🍑   тооp                                // [1F351] (Toor)
+🍒   интоор                              // [1F352] (Intoor)
+🍓   гүзээлзгэнэ                         // [1F353] (Güzeelzgene)
+🥝   киви                                // [1F95D] (Kivi)
+🍅   улаан лооль                         // [1F345] (Ulaan lool)
+🥥   наргил модны самар                  // [1F965] (Nargil modny samar)
+🥑   авокадо                             // [1F951] (Avokado)
+🍆   хаш                                 // [1F346] (Khash)
+🥔   төмс                                // [1F954] (Töms)
+🥕   лууван                             // [1F955] (Luvan)
+🌽   эрдэнэ шиш                          // [1F33D] (Erdene shish)
+🌶   халуун чинжүү                       // [1F336] text|emoji (Khaluun chinjüü)
+🥒   өргөст хэмх                         // [1F952] (Örgöst khemkh)
+🥬   навчит ногоо                        // [1F96C] (Navchit nogoo)
+🥦   брокколи                            // [1F966] (Brokkoli)
+🧄   саримсаг                            // [1F9C4] (Sarimsag)
+🧅   сонгино                             // [1F9C5] (Songino)
+🍄   мөөг                                // [1F344] (Möög)
+🥜   газрын самар                        // [1F95C] (Gazryn samar)
+🌰   туш модны самар                     // [1F330] (Tush modny samar)
+🍞   талх                                // [1F35E] (Talkh)
+🥐   круассан                            // [1F950] (Kruassan)
+🥖   багет талх                          // [1F956] (Baget talkh)
+🥨   претцель                            // [1F968] (Prettsel)
+🥯   бублик                              // [1F96F] (Bublik)
+🥞   панкейк                             // [1F95E] (Pankeik)
+🧇   вафли                               // [1F9C7] (Vafli)
+🧀   бяслаг                              // [1F9C0] (Byaslag)
+🍖   ясны мах                            // [1F356] (Yasny makh)
+🍗   тахианы гуя                         // [1F357] (Takhiany guya)
+🥩   махны зүсэм                         // [1F969] (Makhny züsem)
+🥓   гахайн утсан мах                    // [1F953] (Gakhain utsan makh)
+🍔   бургер                              // [1F354] (Burger)
+🍟   шарсан төмс                         // [1F35F] (Sharsan töms)
+🍕   пицца                               // [1F355] (Pizza)
+🌭   хот-дог                             // [1F32D] (Khot-dog)
+🥪   сэндвич                             // [1F96A] (Sendvich)
+🌮   тако                                // [1F32E] (Tako)
+🌯   буррито                             // [1F32F] (Burrito)
+🥙   дүүргэсэн хавтгай талх              // [1F959] (Düürgesen khavtgai talkh)
+🧆   фалафел                             // [1F9C6] (Falafel)
+🥚   өндөг                               // [1F95A] (Öndög)
+🍳   хоол хийх                           // [1F373] (Khool khiikh) -> хайруулын тавагтай өндөг
+🥘   хавтгай тогоонд хийсэн хоол         // [1F958] (Khavtgai togoond khiisen khool)
+🍲   тогоотой хоол                       // [1F372] (Togootoi khool)
+🥣   халбагатай аяга                     // [1F963] (Khalbagatai ayaga)
+🥗   ногооны салат                       // [1F957] (Nogoony salat)
+🍿   попкорн                             // [1F37F] (Popkorn)
+🧈   цөцгийн тос                         // [1F9C8] (Tsötsgiin tos)
+🧂   давс                                // [1F9C2] (Davs)
+🥫   лаазалсан хоол                      // [1F96B] (Laazalsan khool)
+// ... Activities
+🎬   кино хальс                          // [1F3AC] (Kino khalys)
+🎨   будгийн палитр                      // [1F3A8] text|emoji (Budgiin palitr)
+// ... Flags - these are complex sequences, usually handled by CLDR short names
+🇺🇸  АНУ-ын туг                         // [1F1FA 1F1F8] (ANU-yn tug) - Example, not a direct character
+🇲🇳  Монгол улсын туг                    // [1F1F2 1F1F3] (Mongol ulsyn tug) - Example
+// More emojis would follow this pattern.
+// This list is not exhaustive and focuses on common symbols and a few emoji categories.
+// Mongolian names for many emojis might not be standardized.
