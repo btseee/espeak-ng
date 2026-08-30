@@ -540,6 +540,23 @@ typedef struct {
 	int lengthen_tonic;   // lengthen the tonic syllable
 	int suffix_add_e;      // replace a suffix (which has the SUFX_E flag) with this character
 	bool lowercase_sentence;	// when true, a period . causes a sentence stop even if next character is lowercase
+
+	// when true, an ALL-CAPS run followed directly by lowercase letters stays
+	// ONE word. eSpeak otherwise starts a new word at the last capital, which
+	// is right for CamelCase ("McDonald") but wrong for Mongolian: an
+	// abbreviation or proper noun takes its case suffix in lowercase, written
+	// solid -- МОНГОЛын, НҮБын, ТӨРийн. Splitting gave two separately-stressed
+	// words and mangled the suffix (МОНГОЛын -> m'ONqO# l#'iN). False for every
+	// language that does not set it, leaving the CamelCase behaviour unchanged.
+	bool caps_keep_suffix;
+
+	// NULL-terminated list of clause-final interrogative particles, as UTF-8
+	// words. A clause ending in one of these takes the question intonation
+	// even without a question mark. Mongolian marks yes/no questions with a
+	// clitic (уу/үү) rather than with punctuation. NULL for every language
+	// that does not set it, which leaves the punctuation-only behaviour
+	// completely unchanged.
+	const char * const *question_particles;
 } LANGUAGE_OPTIONS;
 
 typedef struct {

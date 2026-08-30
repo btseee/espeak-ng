@@ -1,6 +1,6 @@
 # Languages
 
-Development version of eSpeak NG supports 127 languages and accents,
+Development version of eSpeak NG supports 129 languages and accents,
 which are listed in table below.
 
 To check, what languages are supported by distributed version, run `espeak-ng --voices` command.
@@ -88,6 +88,7 @@ To check, what languages are supported by distributed version, run `espeak-ng --
 | `dra`       | `ml`              | Dravidian             | Malayalam                   |                        |
 | `sem`       | `mt`              | Semitic               | Maltese                     |                        |
 | `inc`       | `mr`              | Indic                 | Marathi                     |                        |
+| `xgn`       | `mn`              | Mongolic              | Mongolian                   | Khalkha                |
 | `azc`       | `nci`             | Uto-Aztecan           | Nahuatl                     | Classical              |
 | `inc`       | `ne`              | Indic                 | Nepali                      |                        |
 | `gmq`       | `nb`              | North Germanic        | Norwegian Bokmål            |                        |
