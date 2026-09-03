@@ -404,15 +404,30 @@ endphoneme
 
 // k  <- г   /k/ unaspirated lenis velar (front-harmony words)
 phoneme k
-  vls vel stp
-  ipa k
-  lengthmod 2
+  vcd vel stp
+  ipa g
+  lengthmod 5   // voiced-stop category, as base g. With the brk below, the
+                // low-band dip through g on "ага" goes 41.3 -> 33.2 dB, which
+                // is where this voice's own voiced consonants sit (ана 33.0,
+                // ама 34.9, ала 35.7). Do not compare against another voice:
+                // the measure is strongly pitch-dependent. See mn.md 24.
   Vowelin  f1=0  f2=2300 200 300  f3=-150 80
-  Vowelout f1=0  f2=2300 300 400  f3=-150 80  rms=20
-  IF nextPh(isPause2) THEN
-    WAV(ustop/k_unasp, 186)
+  // brk, as base g: keep the release out of the following vowel.
+  Vowelout f1=0  f2=2300 300 400  f3=-150 80  rms=20 brk
+  // Was a fully voiceless stop (WAV(ustop/k_unasp)). A native listener heard
+  // it as к in every position. Khalkha's stop contrast is aspiration, not
+  // voicing, which is why the whole plain series was written vls -- but the
+  // plain series is lenis and voiced intervocalically, and a fully devoiced
+  // unaspirated stop just is a [k]. Voiced stop chosen in a blind A/B/C
+  // against voiceless and against a voiced continuant. See mn.md 23.
+
+  IF PreVoicing THEN
+    FMT(g/xg)
   ENDIF
-  WAV(ustop/k_unasp, 219)
+  IF nextPh(isPause2) THEN
+    FMT(g/g_) addWav(x/g_, 150)
+  ENDIF
+  FMT(g/g) addWav(x/g2, 150)
 endphoneme
 
 
@@ -469,16 +484,23 @@ endphoneme
 // Khalkha г has three surface forms, chosen by mn_rules (.group г), not by
 // context tests here:
 //   k   velar stop       - front-harmony words, and onsets before и
-//   q   uvular stop      - back-harmony words, onset and coda
-//   Q"  uvular fricative - back-harmony words, between vowels
+//   q   uvular stop      - back-harmony words, all positions
+//
+// Both are voiced; see the note on each. Q" below is no longer an allophone of
+// г -- a native listener chose the stop in every position -- and survives only
+// as the voiced counterpart X switches to.
 //
 // q is lenited relative to base1's Arabic/Turkic qaf -- shorter closure and a
 // lower F2 locus (~1300) -- which is what distinguishes Khalkha [ɢ] from a
 // true [q]. WAV(ustop/q) made газар sound like [qaʦar]. See mn.md 16.
 phoneme q
-  vls uvl stp
-  ipa q
-  lengthmod 2
+  vcd uvl stp
+  ipa ɢ
+  lengthmod 5   // voiced-stop category, as base g. With the brk below, the
+                // low-band dip through g on "ага" goes 41.3 -> 33.2 dB, which
+                // is where this voice's own voiced consonants sit (ана 33.0,
+                // ама 34.9, ала 35.7). Do not compare against another voice:
+                // the measure is strongly pitch-dependent. See mn.md 24.
   // Source changed from ustop/k_unasp to ustop/k_unasp_. Measured against
   // mbspeech, q's spectral centroid was 3134 Hz against the speaker's
   // 1838 -- a velar burst standing in for a uvular, far too bright.
@@ -492,18 +514,32 @@ phoneme q
   // exactly where the listener reads the harmony class. Measured against
   // the speaker: q before а -49 Hz where he is at -1 (n=81), Q" -162
   // where he is at -31. Every f1=0 consonant already measured ~0.
-  Vowelin  f1=0  f2=1300 -50 0  f3=-200 80 gpaus f4 rms=24
-  Vowelout f1=0  f2=1300 -100 0  f3=-200 80 f4 rms=28
+  Vowelin  f1=0  f2=1300 -50 0  f3=-200 80 f4 rms=24
+  // brk, as base g: keep the release out of the following vowel.
+  Vowelout f1=0  f2=1300 -100 0  f3=-200 80 f4 rms=28 brk
 
-  IF nextPh(isPause2) THEN
-    WAV(ustop/k_unasp_, 94)
+  // Was a fully voiceless stop (WAV(ustop/k_unasp_)). A native listener heard
+  // it as к in every position. Khalkha's stop contrast is aspiration, not
+  // voicing, which is why the whole plain series was written vls -- but the
+  // plain series is lenis and voiced intervocalically, and a fully devoiced
+  // unaspirated stop just is a [k]. Voiced stop chosen in a blind A/B/C
+  // against voiceless and against a voiced continuant. See mn.md 23.
+
+  IF PreVoicing THEN
+    FMT(g/xg)
   ENDIF
-  WAV(ustop/k_unasp_, 118)
+  IF nextPh(isPause2) THEN
+    FMT(g/g_) addWav(x/g_, 150)
+  ENDIF
+  FMT(g/g) addWav(x/g2, 150)
 endphoneme
 
-// Q" - voiced uvular fricative [ʁ], intervocalic г in back-harmony words
-// (агаар, багана). Softer than the base1 definition: Khalkha [ʁ] is a
-// weak approximant-like fricative, not a scrape.
+// Q" - voiced uvular fricative [ʁ]. NOT used for г any more: it was the
+// intervocalic back-harmony allophone until a native listener chose the uvular
+// stop there instead, and again later when it was retested against a voiced
+// stop. It is still referenced as X's `voicingswitch`, so it must stay defined.
+// Softer than the base1 definition: Khalkha [ʁ] is a weak approximant-like
+// fricative, not a scrape.
 phoneme Q"
   vcd uvl frc
   ipa ʁ
@@ -527,10 +563,22 @@ phoneme ts
   lengthmod 2
   Vowelin  f1=0  f2=1700 -300 300  f3=-100 80
   Vowelout f1=0  f2=1700 -300 250  f3=-100 80  rms=20
+  // з and ц were indistinguishable by ear. Amplitude is NOT the cause -- that
+  // was measured and reverted (see mn.md 10d). The cause is duration: ts_unasp
+  // is 98.1 ms and ts is 120.0 ms, a ratio of 1.22, while every audible
+  // aspiration pair here is 1.4-3.5x (p 1.58, k 1.45, t 3.50, ch 1.31). Both
+  // files are also rising frication ramps with no burst, so neither reads as a
+  // stop release. ts2 is 55.6 ms, the same alveolar sibilant family (centroid
+  // 6227 Hz against ts_unasp's 5659), and is what Armenian, Georgian and
+  // Latvian use for plain [ts]. Ratio becomes 2.16x.
+  // Amplitude retuned so the RENDERED level is unchanged: ts2 peaks 3 dB above
+  // ts_unasp, so 151 -> 76 and 119 -> 60, set by measuring the rendered
+  // onset. Never compare WAV() amplitudes across different source files;
+  // compare the output.
   IF nextPh(isPause2) THEN
-    WAV(ustop/ts_unasp, 119)
+    WAV(ustop/ts2, 60)
   ENDIF
-  WAV(ustop/ts_unasp, 151)
+  WAV(ustop/ts2, 76)
 endphoneme
 
 // tsh <- ц   /tsʰ/ aspirated
@@ -676,6 +724,11 @@ endphoneme
 
 // l# - voiceless alveolar lateral fricative [ɬ]
 phoneme l#
+  // Khalkha л is a PLAIN lateral, not the lateral fricative the reference
+  // describes. The fricative source was at WAV(ufric/l#, 88); a native speaker
+  // could not understand улаан or долларын, and chose "mostly plain, a little
+  // friction left" over both the full fricative and a fully plain lateral.
+  // Only the noise amplitude changed -- the lateral itself is untouched.
   ipa ɬ
   vls alv frc
   lengthmod 3
@@ -696,9 +749,9 @@ phoneme l#
   ENDIF
 
   IF nextPh(isPause) THEN
-    WAV(ufric/l#, 69)
+    WAV(ufric/l#, 18)
   ENDIF
-  WAV(ufric/l#, 88)
+  WAV(ufric/l#, 22)
 endphoneme
 
 // l - voiced alveolar lateral fricative [ɮ], intervocalic only.
@@ -827,6 +880,47 @@ phoneme tsh;
 endphoneme
 
 // l; <- ль  palatalised lateral fricative
+// Word-final ь is PALATALISATION of the consonant, not a [j] segment. A native
+// speaker: "ь at the end shouldn't be pronounced at all". Five consonants
+// already had a palatalised phoneme (t; th; ts; tsh; l;) and the rest fell back
+// to consonant + j, so морь came out [mɔrj] with an audible glide.
+//
+// Same shape as l; -- the pzd feature, a high F2 locus so the transition out of
+// the preceding vowel carries the palatalisation, and CALL to the base phoneme.
+phoneme r;
+  ipa rʲ
+  liquid rhotic trl pzd
+  lengthmod 7
+  Vowelin  f1=0 f2=2500 300 500  f3=300 80
+  Vowelout f1=0 f2=2500 300 500  f3=300 80
+  CALL r
+endphoneme
+
+phoneme m;
+  ipa mʲ
+  vcd blb nas pzd
+  lengthmod 4
+  Vowelout f1=2 f2=2200 200 400  f3=200 80
+  CALL m
+endphoneme
+
+phoneme s;
+  ipa sʲ
+  vls alv frc sib pzd
+  lengthmod 3
+  Vowelin  f1=0 f2=2500 300 500  f3=300 80
+  Vowelout f1=0 f2=2500 300 500  f3=300 80
+  CALL s
+endphoneme
+
+phoneme w;
+  ipa wʲ
+  vcd lbd frc pzd
+  lengthmod 3
+  Vowelout f1=0 f2=2400 300 500  f3=300 80
+  CALL w
+endphoneme
+
 phoneme l;
   ipa ɮʲ
   liquid pzd

@@ -167,7 +167,12 @@
         аа (+++             a:
         ай (+++             aI
 
-        L04L05) а (L07L04+          // G4 delete
+        // G4 used to DELETE here, and багана was the one example the rule was
+        // written for: it produced p'aQ"na#, [paʁna]. A native speaker says that
+        // is wrong -- the vowel is reduced, not lost. Reducing instead makes this
+        // consistent with the pre-obstruent case, which already reduces (хотод ->
+        // X'OthO#t). Only `а` ever had a deletion rule, so this is the whole of it.
+        L04L05) а (L07L04+      a#          // G4 reduce
 
         L04L05) а (L09_          a#
         L04L05L05) а (L09_       a#
@@ -369,11 +374,18 @@
         д (ь        t;
         д           t
 
-// г has three surface forms, chosen by the harmony class of the
+// г has two surface forms, chosen by the harmony class of the
 // WORD rather than by the neighbouring letter alone:
-//   k   velar stop       - front-harmony words
-//   q   uvular stop      - back-harmony words
-//   Q"  uvular fricative - back-harmony words, between vowels
+//   k   velar stop  - front-harmony words
+//   q   uvular stop - back-harmony words
+//
+// There used to be a third, Q" (uvular fricative [ʁ]), for the
+// intervocalic position: бага was [paʁa]. A native speaker could not
+// understand that word, nor байгууллага or сургууль -- the three
+// "didn't understand" items that contained a uvular. Offered a choice
+// between the fricative, a uvular stop, and no uvular at all, he chose
+// the STOP. So the harmony-driven uvular allophone is right and only its
+// fricative realisation was wrong: г is a stop in every position.
 // The -гт- cluster lenites to a fricative in both classes
 // (цагт [tsʰaχt], эгшиг [ekʃik]).
 .group г
@@ -413,7 +425,7 @@
         L01) г (т           X
         г (т                X
 
-        L01) г (L04+        Q"      // intervocalic, back-harmony word
+        L01) г (L04+        q       // intervocalic, back-harmony word
 
         L01L10L10L10) г (и     q       // и is transparent to harmony
         L01L10L10) г (и     q       // и is transparent to harmony
@@ -584,7 +596,7 @@
 // mn_list with an explicit v.
 .group в
         в (ьL08     w
-        в (ь        wj
+        в (ь        w;
         в           w
 
 
@@ -592,7 +604,7 @@
 
 .group м
         м (ьL08     m
-        м (ь        mj
+        м (ь        m;
         м           m
 
 // н is [ŋ] before a velar/uvular and word-finally, [n] elsewhere.
@@ -604,7 +616,11 @@
         н (г        N
         н (к        N
         н (х        N
-        н (_        N
+        // Word-final н is a PLAIN n. It used to be the velar N [ŋ], which is
+        // what the reference describes, but a native speaker chose n on a
+        // straight A/B (хүн, ном, сайн, эрдэмтэн). Assimilation before a velar
+        // is unaffected -- н (г, н (к, н (х above all keep N.
+        н (_        n
         н           n
 
 
@@ -620,6 +636,11 @@
         // same group contradicting its own voicing rule.
         L04) л (ьL08    l
         л (ьL08         l#
+        // Word-final ль surfaces as a GLIDE BEFORE the lateral, not as a
+        // palatalised lateral after it: сургууль is [surɢuːi̯ɬ], "сургуйл",
+        // not [surɢuːʎ] which a native speaker heard as "сургуули".
+        // The lateral itself stays voiceless, exactly as in сургуул.
+        л (ь_           jl#
         л (ь            l;
         _) л            l#
         л (_            l#
@@ -639,7 +660,7 @@
 
 .group р
         р (ьL08     r
-        р (ь        rj
+        р (ь        r;
         р           r
 
 .group й

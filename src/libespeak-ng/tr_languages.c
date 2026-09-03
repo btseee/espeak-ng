@@ -207,6 +207,7 @@ static const unsigned short chars_ignore_zwnj_hyphen[] = {
 };
 
 static const unsigned char utf8_ordinal[] = { 0xc2, 0xba, 0 }; // masculine ordinal character, UTF-8
+static const unsigned char utf8_mn_ordinal[] = { 0xd1, 0x80, 0 }; // Cyrillic ER, the Mongolian ordinal marker
 static const unsigned char utf8_null[] = { 0 }; // null string, UTF-8
 
 static Translator *NewTranslator(void)
@@ -1176,7 +1177,7 @@ Translator *SelectTranslator(const char *name)
 		tr->langopts.lengthen_tonic = 0;
 		tr->langopts.param[LOPT_SUFFIX] = 1;
 
-		tr->langopts.numbers =  NUM_OMIT_1_HUNDRED | NUM_DFRACTION_6;
+		tr->langopts.numbers =  NUM_OMIT_1_HUNDRED | NUM_DFRACTION_2;
 		tr->langopts.max_initial_consonants = 2;
 		SetLengthMods(tr, 3); // all equal
 	}
@@ -1326,7 +1327,37 @@ Translator *SelectTranslator(const char *name)
 		tr->langopts.word_gap = 0x20;
 
 		tr->langopts.vowel_pause = 1;
-		tr->langopts.numbers = NUM_OMIT_1_HUNDRED | NUM_DFRACTION_6;
+
+		// Roman numerals are ORDINAL in Mongolian: "XXI зуун" is the twenty-first
+		// century and "III бүлэг" the third chapter, so they reuse the _1o.._90o
+		// entries added for the N-р form. Restricted to all-caps because a lone
+		// lower-case "i" or "x" in mixed text is not a numeral. No risk from
+		// Cyrillic: TranslateRoman matches "ixcmvld", Latin only, and Cyrillic х
+		// (U+0445) is not Latin x (U+0078).
+		tr->langopts.numbers = NUM_OMIT_1_HUNDRED | NUM_DFRACTION_2
+		                     | NUM_ROMAN | NUM_ROMAN_CAPITALS | NUM_ROMAN_ORDINAL;
+
+		// The ordinal marker. TranslateRoman rebuilds the value as "21 р" and
+		// re-parses it, so the suffix arrives space-separated rather than
+		// hyphenated; mn_list carries both `_#-р` and `_#р` for that reason.
+		tr->langopts.roman_suffix = utf8_mn_ordinal;
+
+		// A numeral modifying a noun takes the attributive form: тав is five,
+		// but "5 км" is таван километр. Only the final unit changes; the tens
+		// are already attributive in mn_list (хорин, not хорь).
+		//
+		// The words below are the exception: a conjunction, clitic or particle
+		// after the numeral is not a counted noun, so "5 юм" stays тав юм. They
+		// are the same closed class already listed as particles in mn_list.
+		static const char * const attributive_stop_mn[] = {
+			"ба", "буюу", "болон", "эсвэл",       // conjunctions
+			"нь", "юм", "бол", "л", "ч", "мөн",   // clitics and topic markers
+			"гэж", "гэсэн", "гэдэг", "гэх",       // quotatives
+			"шүү", "даа", "дээ", "аа", "биз",     // sentence-final particles
+			NULL
+		};
+		tr->langopts.numbers2 |= NUM2_ATTRIBUTIVE;
+		tr->langopts.attributive_stop_words = attributive_stop_mn;
 
 		// Unstable-vowel deletion produces clusters the spelling does not show
 		// (ажилтан is four consonants deep), so the syllabifier needs the room.

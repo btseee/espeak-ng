@@ -24,11 +24,11 @@ Franzén, *The Phonology of Mongolian* (Oxford University Press, 2005).
 
 ---
 
-> **Note on `tools/mnlab`.** Sections below refer to a measurement toolkit at
-> `tools/mnlab/` in the present tense. **It has been removed** — see §17. Those
-> passages are records of how a value was arrived at, not instructions you can
-> follow today. Every acoustic number in this document is a historical
-> measurement that cannot currently be re-derived.
+> **The acoustic numbers here are historical.** They were produced by a
+> measurement toolkit, `tools/mnlab`, which was untracked, never meant to ship,
+> and has since been removed (§17). Passages describing it record how a value
+> was arrived at; they are not a procedure you can run today, and no number
+> below can currently be re-derived.
 
 ## 1. Aspiration, not voicing
 
@@ -94,8 +94,9 @@ to derive it for them — Mongolian orthography writes -аар on a back root an
 What harmony *is* needed for is the consonants, because the spelling does not
 show it:
 
-- **г** is a velar stop `k` in an ATR word, a retracted stop `q` in an RTR word,
-  and a uvular fricative `Q"` /ʁ/ between vowels in an RTR word.
+- **г** is a velar stop `k` in an ATR word and a uvular stop `q` in an RTR word,
+  in every position. Both are voiced. An earlier revision used a uvular
+  fricative `Q"` /ʁ/ between vowels; a native listener rejected it (§24).
 - **х** is velar `x` in an ATR word and uvular `X` /χ/ in an RTR word.
 
 **Measured, and the two are not equally strong.** Taking F2 at the vowel onset
@@ -117,14 +118,14 @@ CI [+0.02, +0.47]).
 |---|---|---|
 | гэр | `k'er` | front root, velar |
 | газар | `q'atsa#r` | back root, uvular |
-| бага | `p'aQ"a#` | back root, intervocalic → [ʁ] |
+| бага | `p'aqa#` | back root, uvular |
 | хэл | `x'el#` | front root, velar |
 | хот | `X'Oth` | back root, uvular |
 
 Because **и** is transparent, a suffix containing only и inherits the root's
 class. The rules look leftward past the и to find the nearest harmonic vowel,
-which is why **цагийн** comes out `tsh'aQ"i:N` (uvular, from back цаг) while
-**гэрийн** comes out `k'eri:N` (velar, from front гэр) — two spellings that look
+which is why **цагийн** comes out `tsh'aqi:n` (uvular, from back цаг) while
+**гэрийн** comes out `k'eri:n` (velar, from front гэр) — two spellings that look
 alike but are not.
 
 ### How the lookback is written
@@ -162,9 +163,9 @@ The rules implement it with five guards:
 |---|---|---|
 | G1 | Non-initial only | The first syllable's vowel is never touched. |
 | G2 | Short only | Long vowels and diphthongs are two-letter matches carrying `+++`, so they outscore every deletion rule. |
-| G3 | Word-final vowels reduce, never vanish | **бага** → `p'aQ"a#` [paʁă], not [paʁ]. |
-| G4 | The result must be sayable | Full deletion is licensed only between single consonants where the following one is a sonorant: **багана** → `p'aQ"na#` [paʁnă]. Before an obstruent the vowel reduces instead: **хотод** → `X'OthO#t`, **нутаг** → `n'Utha#q`. Before a two-consonant cluster nothing happens at all: **нэмэлт** stays `n'eme#l#th`, because [nmlt] is not sayable. |
-| G5 | A word-final -ан/-эн/-ал/-ам reduces, it does not delete | **болон** → `p'OlO#N` [pɔɬɔ̆ŋ], **эзэн** → `'etse#N`, **оюутан** → `'OjU:tha#N`, **төрөл** → `th'8r8#l#`. There is no syllabic-sonorant rule; these go through the ordinary reduction path, the same one that already gave **боловсрол** `p'OlO#wsrO#l#`. |
+| G3 | Word-final vowels reduce, never vanish | **бага** → `p'aqa#` [paɢă], not [paɢ]. |
+| G4 | The result must be sayable | The vowel REDUCES, it is never deleted: **багана** → `p'aqa#na#` [paɢana], **хотод** → `X'OthO#t`, **нутаг** → `n'Utha#q`. Before a two-consonant cluster nothing happens at all: **нэмэлт** stays `n'eme#l#th`, because [nmlt] is not sayable.<br><br>This rule used to *delete* before a sonorant, and багана was the single example it was written for. A native speaker rejected that output; the vowel is reduced, not lost. Only `а` ever carried a deletion rule, so reducing it makes the whole G4 family consistent. |
+| G5 | A word-final -ан/-эн/-ал/-ам reduces, it does not delete | **болон** → `p'OlO#n` [pɔɬɔ̆n], **эзэн** → `'etse#n`, **оюутан** → `'OjU:tha#n`, **төрөл** → `th'8r8#l#`. There is no syllabic-sonorant rule; these go through the ordinary reduction path, the same one that already gave **боловсрол** `p'OlO#wsrO#l#`. |
 
 **и and ы are exempt.** They are the vowels of the genitive and accusative
 suffixes (-ын, -ийн, -ыг, -ийг); deleting them would destroy the case system.
@@ -266,7 +267,7 @@ articulation.
 merely palatalise it — and writing them as j+V is itself what realises
 palatalisation on the labials and velars. Their long forms are handled
 explicitly, including **юу** → `jU:` and **юү** → `jy:`, which a reading of the
-letters in isolation would miss: **оюутан** is `'OjU:tha#N`, not `*OjUUtan`.
+letters in isolation would miss: **оюутан** is `'OjU:tha#n`, not `*OjUUtan`.
 
 **е** is the exception: /je/ word-initially, after a vowel, and after ь; plain
 /e/ after a consonant (mostly Russian loanwords).
@@ -840,7 +841,8 @@ Four things still need listing:
 
    The sharpest case is a loanword ending in **-ан / -он**, where the final
    vowel reduces (§3) as it would in a native word. A borrowing keeps it full,
-   so **ресторан** is `r'esthOran` and not `r'esthO#ra#N`. Any new loanword
+   so **ресторан** is `r'esthOraN` and not `r'esthO#ra#N` — the point is the
+   unreduced `a`, not the final nasal. Any new loanword
    with that shape needs an entry. (Before G5 was corrected this was much worse
    than a reduced vowel — the word came out as [restʰɔrŋ̩], with no vowel there
    at all.)
@@ -923,9 +925,9 @@ written, and each `_No` carries the cardinal plus the harmonising **-дугаа*
 
 ```
 _#-р    r
-_1o     n'ekty#ke:        // нэгдүгээр      _10o   'ara#wtU#Q"a:
-_2o     X'OjO#rtU#Q"a:    // хоёрдугаар     _20o   X'OrjtU#Q"a:
-...                                          _0Co   ts'U:tU#Q"a:   (зуудугаар)
+_1o     n'ekty#ke:        // нэгдүгээр      _10o   'ara#wtU#qa:
+_2o     X'OjO#rtU#qa:    // хоёрдугаар     _20o   X'Or;tU#qa:
+...                                          _0Co   ts'U:tU#qa:   (зуудугаар)
 ```
 
 Two details the mechanism forces:
@@ -959,7 +961,7 @@ limitation rather than a Mongolian configuration error.
 
 ---
 
-## 10c. Consonant strength, measured
+## 10b. Consonant strength, measured
 
 The original native-speaker report was that "pronouncing consonantal is weak".
 That is measurable: every consonant token is compared to the human token DTW maps
@@ -1010,12 +1012,11 @@ and `scale_envelope()` exists for the cases where it genuinely is.
 
 ---
 
-## 10b. Auditing the vowel space against a reference
+## 10c. Auditing the vowel space against a reference
 
-`tools/mnlab/` holds a measurement toolkit that compares eSpeak against a
-Mongolian TTS reference (`facebook/mms-tts-mon`). Before using any number it
-produces, read this section: the reference's limits were measured, and they are
-tighter than they look.
+The toolkit compared eSpeak against a Mongolian TTS reference
+(`facebook/mms-tts-mon`). Before trusting any number below, read this section:
+the reference's limits were measured, and they are tighter than they look.
 
 ### The reference's noise floor, measured
 
@@ -1155,10 +1156,10 @@ as a known gap rather than guessed at.
 ### Resolution: measured against real speakers
 
 The reference's limits made it useless for magnitudes, so the vowel space was
-re-measured against **real Mongolian speech** instead. `tools/mnlab/corpus/`
-holds one mbspeech shard (1,923 utterances, single male speaker); `human.py`
-aligns each sentence by DTW against eSpeak's own phoneme events, maps every
-stressed-vowel span onto the human timeline, and measures it there.
+re-measured against **real Mongolian speech** instead: one mbspeech shard
+(1,923 utterances, single male speaker). Each sentence was aligned by DTW
+against eSpeak's own phoneme events, and every stressed-vowel span mapped onto
+the human timeline and measured there.
 
 400 utterances give 192–789 tokens per vowel and standard errors of 10–41 Hz --
 an order of magnitude better determined than anything the TTS reference could
@@ -1200,9 +1201,8 @@ was not, and the corrected magnitude is roughly half what was claimed.
 be re-run before any future number from this reference is believed.
 
 
-`tools/mnlab/` holds a measurement toolkit that compares eSpeak against a
-Mongolian TTS reference (`facebook/mms-tts-mon`). Two things about it are
-load-bearing, and both were learned the hard way.
+Two things about that reference are load-bearing, and both were learned the
+hard way.
 
 **Only CONTRASTS are comparable, never absolute values.** The reference cannot
 supply an absolute target: its isolated vowels are out of distribution (a bare ө
@@ -1317,8 +1317,8 @@ in the build will say so.
 
 ### The measurement cache silently held values from a broken build
 
-`tools/mnlab/sweepall.pkl` caches DTW-aligned corpus tokens, and every human-side
-comparison in this project reads from it. It had been collected **while the six
+The toolkit cached DTW-aligned corpus tokens, and every human-side comparison
+in this project read from that cache. It had been collected **while the six
 oral stops were emitting silence**. eSpeak produced nothing where a stop belonged,
 so the alignment there mapped onto whatever was adjacent:
 
@@ -1464,7 +1464,8 @@ numerals keep their vowel and nasal corrections but no stress mark.
 
 ### The gates are tests now, not a script
 
-`tools/mnlab/tests/test_gates.py`. They had existed only as a scratchpad script,
+The gates were moved into the toolkit's test suite. They had existed only as a
+scratchpad script,
 which is how one went stale unnoticed: it still demanded that no reduced vowel
 point at a full-vowel file, long after that was deliberately reverted. A gate
 outside the suite cannot fail loudly, so it drifts.
@@ -1477,9 +1478,9 @@ gate and nothing else.
 
 ### Cached measurements are stamped with the build that produced them
 
-`tools/mnlab/buildstamp.py`, used by `sweepall.py`. A cache is only valid for the
-build that made it, because the DTW alignment follows eSpeak's output — and
-`sweepall.pkl` was once reused across a build in which every oral stop was
+Each cache was stamped with a build fingerprint. A cache is only valid for the
+build that made it, because the DTW alignment follows eSpeak's output — and one
+was once reused across a build in which every oral stop was
 silent, putting the stored human duration for `t` out by 50 ms and the level for
 `k` out by 5.5 dB. Nothing recorded provenance and nothing complained.
 
@@ -1520,8 +1521,8 @@ as voiced as an environment gets, and the same rule group already documents
 `L04) л (L04 → l`.
 
 The **geminate** case is the same gap seen from the other side:
-`байгууллага` → `p'aIqU:l#l#a#Q"a#`, `долларын` → `t'Ol#l#a#ri#N`. The
-intervocalic rule needs a vowel on *both* sides, and a doubled letter puts a
+in `байгууллага` and `долларын` both halves of the doubled л fell through to
+the voiceless `l#`. The intervocalic rule needs a vowel on *both* sides, and a doubled letter puts a
 consonant on one, so both halves fell through to the voiceless `l#`. Khalkha л
 is /ɮ/ and devoices only beside a voiceless segment or at a word edge; a
 geminate between two vowels has neither. Both now take `l`, while `алт` and
@@ -1610,10 +1611,10 @@ within 0.78–1.29× on duration, over 18,065 aligned phones.
 
 ### Gates
 
-`tools/mnlab/tests/test_rules.py` (30 cases) guards the symbolic layer, which
+A 30-case suite guarded the symbolic layer, which
 had no gates at all — the double [j] shows a fix in one direction silently
 breaking another, which is exactly the class that needs holding. Two acoustic
-gates were added to `test_gates.py` for the uvular F1 mode and for peak 0.
+gates were added for the uvular F1 mode and for peak 0.
 
 ---
 
@@ -1878,13 +1879,15 @@ just reporting a changed string.
 
 Two traps specific to these test files:
 
-- **The `Q"` phoneme contains a double quote.** Inside a double-quoted shell
-  argument it must be written `\"`, or the expected string is silently
-  truncated at that point and the case tests less than it appears to. Three
-  lines are affected (цагийн, багана, бага).
+- **Test text is passed as `argv`.** A text beginning with `-` is parsed as an
+  option — `test_phon mn "..." "-5"` failed with `invalid option -- '5'`. The
+  helpers in `tests/common` pass `--` before the text to end option parsing;
+  keep that if you add a helper.
 - **Non-ASCII argv is mangled on Windows.** Verify with
   `-f <utf8 file>` and strip `
 ` rather than passing the text as an argument.
+  Note this means a local `-f` harness cannot reproduce the `argv` trap above;
+  only the real shell tests catch it.
 
 ### The whole-vocabulary sweep
 
@@ -2386,3 +2389,583 @@ was deleted, joining the existing ones for 88 in total. They run under the
 project's own suite. The acoustic gates could not migrate — they read binary
 spect files through `spectio.py` — so their content is only what is written
 down here.
+
+---
+
+## 18. The normalization spec, triaged
+
+A 70-category Mongolian text-normalization specification was checked against
+what the engine can actually do. This section records the verdict for each
+class so it is answered once rather than re-litigated.
+
+**The spec is mostly not an espeak-ng spec.** eSpeak's text layer does numbers,
+symbols and dictionary lookups. It has no URL parser, no date parser, no
+transliteration tables and no sentence-boundary model. Those belong in a
+normalization frontend that runs *before* eSpeak.
+
+### Done in this round
+
+- **Roman numerals** (§25 of the spec). `XXI зуун` read "экс экс и зуун".
+  Mongolian uses them as ordinals — twenty-first century, third chapter — so
+  `NUM_ROMAN | NUM_ROMAN_CAPITALS | NUM_ROMAN_ORDINAL` is correct, and they reuse
+  the `_1o`…`_90o` entries added for `N-р`.
+
+  Roman numerals reach those entries by a **different route**: `TranslateRoman`
+  rebuilds the value as `"21 <roman_suffix>"` with a space, so the suffix arrives
+  unhyphenated. `mn_list` therefore carries both `_#-р` (written form) and `_#р`
+  (Roman route), and `tr_languages.c` sets `roman_suffix` to Cyrillic р.
+
+  Cyrillic cannot be misread: `TranslateRoman` matches `"ixcmvld"`, Latin only,
+  and Cyrillic х (U+0445) is not Latin x (U+0078). `Х`, `ХХ зуун`, `хот`, `их`
+  and `ХИЙ` are all covered by tests.
+
+  Known limit, recorded not endorsed: eSpeak refuses a single-letter Roman
+  numeral unless a dot follows, so `V бүлэг` stays "вэ бүлэг".
+
+- **`проф.`** now expands to профессор. `$dot` stops the dot being *pronounced*
+  but not the clause break it causes — that decision is made in `readclause.c`
+  before translation, so a pause remains.
+
+### Tried and reverted — the tokenizer, not the dictionary
+
+`м²`, `м³`, `кВт`, `куб.м` and `°C` were added as `mn_list` entries and **none of
+them fired**, because the tokenizer splits them before any lookup happens: `²`
+is not a letter, the dot in `куб.м` splits, and the internal capital in `кВт`
+triggers the CamelCase split. An all-lowercase `квт` does work, but real text
+writes `кВт`.
+
+`д-р` is the same: `-X` shows it translated as two separate words, `д` and `р`,
+so no dictionary key can ever match it.
+
+The entries were removed rather than left in place. A dictionary line that never
+fires is worse than no line — it implies coverage that does not exist.
+
+This also confirms where the boundary lies: **these are tokenizer-level
+problems, the same class as URLs and dates, and belong in a frontend.**
+
+### Also done
+
+- **Attributive numerals** — see below. This was listed as unfixable and was not.
+
+### Not attempted, with the reason
+
+| spec | why not |
+|---|---|
+| Fractions `1/2`, `2 1/2` | `numbers.c` has no slash handling of any kind |
+| Distributive `5-аар`, collective `5-уул` | the `_#-` hook forces `ordinal = 2`, so it would emit "тавдугаа аар" |
+| Dates, times, ranges, ratios, scores | no date or time parser; `09:15` reads "ес арван тав" with no цаг/минут |
+| Phone numbers, ISBN, versions, legal refs | no digit-string mode |
+| Prefix currency `$100` | **not Mongolian-specific** — English gives "dollar one hundred" too. Engine-wide; a separate cross-language change |
+| URLs, emails, hashtags, emoji semantics, foreign-name transliteration, chemical formulas, scientific notation, sentence boundaries, code-switching, tables, poetry | frontend, not a TTS engine's job |
+
+### Fixed: attributive numerals
+
+A numeral modifying a noun takes a different form from the one used in
+isolation: тав is "five", but "5 км" is **таван** километр. eSpeak emitted the
+isolated form everywhere, and the specification hits this in six places.
+
+This section previously said it could not be fixed here — that `numbers.c` emits
+phonemes directly so `mn_rules` cannot post-process them, and the engine has no
+"attributive before a noun" concept. The first half is true; the conclusion was
+wrong. The engine already has the *key*: `_%de`, selected by `number_control & 1`
+and restricted by `control & 2` to the **final tens and units** of a number —
+which is exactly the scope Mongolian needs, because the tens are attributive in
+`mn_list` already (хорин, not хорь).
+
+Only the trigger was missing. `NUM2_ATTRIBUTIVE` sets `number_control |= 1` when
+a word follows the number, right beside the existing Hungarian hook where `wtab`
+is in scope. Every other language is unaffected: the flag is opt-in and the
+lookup falls back to `_%d` when no `_%de` entry exists.
+
+    5 км    → таван километр      3 хүн   → гурван хүн
+    25 км   → хорин таван километр   9 сар   → есөн сар
+
+**The trigger took two corrections, both caught by testing rather than by
+thinking.**
+
+First: a following *number* is not a following noun. Triggering on any following
+word broke counts (`0 1 2 3` became "гурван дөрвөн") and ranges (`2010-2020`).
+The trigger now skips the separator and requires the next character not to be a
+digit.
+
+Second: a following *particle* is not a noun either. Of nine probe cases, seven
+were still wrong — `5 ба 6`, `5 юм`, `5 нь их`, `5 гэж хэлэв`, `5 бол их`,
+`5 л байна` all went attributive. Conjunctions, clitics, quotatives and
+sentence-final particles are a closed class, and the same one already listed as
+particles in `mn_list`, so `langopts.attributive_stop_words` names them instead
+of guessing. `5` alone still reads тав.
+
+That list is a linguistic judgement, not a measurement, and it is the part of
+this change most likely to need a native speaker's revision.
+
+`mn_list` carries `_3e`…`_10e`; 1 and 2 do not change form and are absent.
+
+Not covered: the scale words. `1000 хүн` reads "нэг мянга хүн" where Mongolian
+wants мянган. `_%de` reaches the final unit, not the thousands word, so that
+needs a separate variant.
+
+### `mn-f`
+
+Acoustic validation remains impossible: the reference corpus is one male speaker
+and the toolkit is gone. What *is* checkable, and now checked: `mn-f` is
+**phoneme-identical to `mn` across all 111 test texts**, which is the real
+invariant — it is the same language with different voice parameters. Its
+settings are internally coherent: `pitch 140 210` gives `formant_factor` 1.177,
+which scales the coarticulation target, while `formant 1/2/3 = 112/117/111`
+scale the vowel formants. Those are different mechanisms and do not compound.
+
+---
+
+## 19. What a native speaker heard, and what it changed
+
+Section 18 answered a specification. This one answers a listener. A 5-minute
+review file covering every phenomenon (`~/mn_samples/mn_full_review.wav`, with a
+timestamped index) was played to a native speaker, who rated the voice 3/10 and
+pointed at specific timestamps.
+
+### The uvular fricative was wrong; the uvular allophony was not
+
+Three of the six words he could not understand contained a uvular: бага
+[paʁa], байгууллага, сургууль. `г` had three surface forms -- velar `k` in
+front-harmony words, uvular `q` in back-harmony words, and uvular fricative
+`Q"` [ʁ] between vowels.
+
+The literature this voice is built on (Svantesson et al.) describes exactly that
+allophony, so it could not be overturned on one reading. Instead the question was
+put as a listening choice: the same fourteen words rendered three ways --
+
+| | |
+|---|---|
+| A | current: uvular `q`, fricative `Q"` between vowels |
+| B | uvular **stop** everywhere in back words, no fricative |
+| C | velar everywhere, no uvular allophone at all |
+
+He chose **B**. So the harmony-driven uvular allophone is correct and only its
+fricative realisation was wrong: **г is a stop in every position**. бага is now
+[paqa].
+
+Worth recording that a Mongolian-specialist LLM had answered **C** -- that г is
+identical in back and front words. The speaker's ear disagreed. The listening
+test settled what neither the reference nor the model could.
+
+`Q"` is gone from the rules, and the 24 `mn_list` entries that had it baked in
+(the `-дугаар` ordinals, plus вагон) were regenerated.
+
+### Word-final ь was audible
+
+`морь` came out [mɔrj], with a real [j] segment. Final ь is palatalisation of
+the preceding consonant and is itself silent.
+
+The file was inconsistent with itself: five consonants had dedicated palatalised
+phonemes (`t; th; ts; tsh; l;`) and every other one fell back to consonant + `j`.
+Added `r; m; s; w;` on the same pattern. морьё keeps its glide, correctly -- that
+is an iotated vowel, not a bare soft sign.
+
+**`X;` and `x;` were tried and reverted.** Built the same way, they came out
+*inert*: дах and дахь produced byte-identical audio, 771 ms and rms 2134 for
+both, destroying a contrast that works today. `CALL X` overrides the palatalised
+locus. Same family as the `ipa`-after-`import_phoneme` silence in section 10d --
+a phoneme that compiles cleanly and changes nothing. дахь keeps its glide until
+a real palatalised uvular exists.
+
+### Still open, from the same session
+
+- **э is too close to и.** "эт sounds like ит". Their separation is 59, the
+  second-smallest of any pair: э sits at F1 276 against и's 235, where a mid [e]
+  wants roughly 400-450.
+- **о/ө is weak** (separation 132), and **у/ү weaker still** (79).
+- **ө may be rounded the wrong way.** The speaker describes ө as *more* rounded
+  than о, which means lower F2 -- but the file has ө at F2 1302 against о's 1046,
+  and against this project's own measured value of 1082 (section 6).
+- **улаан and долларын** were not understood either, and contain no uvular. The
+  fault there is the vowel or the geminate `лл`.
+
+### Whisper is not usable here
+
+`faster-whisper tiny` transcribed Mongolian TTS output as "ipsolchitta mungkos
+kinsling" and, on another sentence, Chinese characters. That is the model failing
+at a low-resource language, not evidence about the voice; `small` could not be
+downloaded on the available hardware. A Mongolian-specific ASR (Chimeg)
+transcribed the same connected-speech sentence essentially correctly, which is
+the more useful datum: the fault is not everywhere.
+
+---
+
+## 20. Four listening tests, and what they overturned
+
+Section 19 recorded the first native-speaker session. This one records what four
+A/B tests decided, and it is the part of this document most at odds with the
+reference the voice was built on.
+
+The method each time: change exactly one parameter, render the same words two or
+three ways into one file with a tone between blocks and a timestamped index, and
+ask only "which letter". No description required, no phonetic vocabulary. That
+converts an ear into a decision.
+
+### The vowel space was compressed
+
+Individual vowels were tried first -- э's F1 at 276 / 360 / 440, and ө's F2 at
+1302 / 1082 / 950. The speaker's verdict was **"none of them is correct"**, for
+either. That is a more useful answer than a choice: it killed the hypothesis
+that any single vowel was at fault.
+
+Comparing the whole inventory against normal male values showed why. **Every F1
+was low, median −114 Hz**, and the space spanned 235–567 where a male's spans
+roughly 250–750 -- squashed toward the close end, so no pair separated from any
+other. The open vowels were worst (а −133, о −163, э −174) and the close ones
+nearly right (и −45, ү −47). It also matched what the speaker had said twice in
+his own words: "о should be strong", "а should be strong".
+
+Offered current / halfway / full male targets, he chose **halfway**:
+
+| | was | now |
+|---|---|---|
+| а | 567 | 634 |
+| э | 276 | 363 |
+| и | 235 | 258 |
+| о | 387 | 469 |
+| ө | 286 | 343 |
+| у | 299 | 350 |
+| ү | 253 | 277 |
+
+Short, long, reduced and diphthong nuclei all moved together. э/и went from 41 Hz
+apart to 105.
+
+Doing this exposed a latent bug: **`yi` had peak 0 above F1 in six of its frames**
+(`ei` in three), which blocks any F1 change. The gate added in section 10f only
+checked the steady frame, so it never saw them. Clamped per frame.
+
+### л is a plain lateral
+
+The reference analyses Khalkha л as a lateral fricative, and the voice
+implemented it as one: `WAV(ufric/l#, 88)`. Two of the six words the speaker
+could not understand were улаан and долларын, neither of which contains a uvular,
+so nothing else explained them.
+
+Asked twice in separate sessions, the specialist model said plain л both times.
+Offered fricative / mostly plain / fully plain, the speaker chose **mostly
+plain**: the noise source drops to 22, the lateral itself untouched.
+
+### Word-final н is [n], not [ŋ]
+
+Also contrary to the reference, and also confirmed twice by the model before
+being put to the ear, which chose it on a straight A/B over хүн, ном, сайн,
+эрдэмтэн. Assimilation before a velar is unaffected -- монгол, анги, банк and
+ханх all keep [ŋ].
+
+### сургууль is "сургуйл"
+
+Word-final ль surfaces as a glide BEFORE the lateral, not as a palatalised
+lateral after it: [surɢuːi̯ɬ], not [surɢuːʎ], which the speaker heard as
+"сургуули". Scoped to word-final -- сургуульд and хаальга keep the palatalised
+lateral, and сургуул is untouched.
+
+### On disagreeing with the reference
+
+Three of these contradict Svantesson: the uvular fricative (§19), plain л, and
+final [n]. None was changed on one opinion. Each was confirmed twice by a
+Mongolian-specialist model AND then chosen by a native speaker on a blind A/B
+against the current behaviour. Where the model and the ear disagreed -- the model
+said г is velar everywhere, the speaker chose the uvular stop -- **the ear won**.
+
+That is the standard this section holds to, and it is worth stating plainly
+because the measurements that justified the original values no longer exist: the
+corpus and toolkit were removed in section 17, so nothing here can be
+re-derived, only re-heard.
+
+### Not acted on
+
+The same model, asked eight short questions, produced four answers that do not
+survive checking: that у and ү differ by LENGTH (both are short; the contrast is
+harmony); that ор and оор differ by lip position (both rounded; the difference is
+length); a third distinct set of ordinal tens across three askings; and that
+final ж hardens to ч (eSpeak already distinguishes ж [tʃ] from ч [tʃʰ] by
+aspiration, which is the Khalkha contrast -- it was describing correct
+behaviour). Its claim that в is [v] rather than [w] was asked only once and
+remains untested.
+
+## 21. Hard-coded phonemes go stale: the rule that catches it
+
+Changing `mn_rules` can silently invalidate `mn_list`. A list entry spells its
+phonemes out, so it does not follow the rules -- that is the point of a list
+entry. But when the entry exists for a *number-engine key* rather than to
+override a rule, the same word can reach the listener by two paths, and the two
+must agree.
+
+Adding word-final palatalization (`р (ь` -> `r;`, `в (ь` -> `w;`) broke three
+entries that still carried the old `j` glide:
+
+| key | was | now | word |
+|---|---|---|---|
+| `%` | `XUwj` | `XUw;` | хувь |
+| `_20o` | `X'OrjtU#qa:` | `X'Or;tU#qa:` | хорьдугаар |
+| `_50o` | `th'awjtU#qa:` | `th'aw;tU#qa:` | тавьдугаар |
+
+Audibly, `25%` and `хорин таван хувь` said хувь two different ways. Nothing
+failed -- every test still passed, because the tests asserted the stale strings.
+
+**The invariant.** Every `_`-prefixed entry whose comment names a Mongolian word
+must equal what the rules derive for that word, modulo the `-р` suffix `r` that
+`_#-р` appends. It is mechanically checkable:
+
+```sh
+# extract "key  phonemes  // word" triples, derive each word, compare
+awk '/^_[0-9A-Za-z#%]+[ \t]+[^ \t]+[ \t]*\/\/[ \t]*[^ \t]+$/ {...}' dictsource/mn_list
+espeak-ng -xq -v mn -f words.txt
+```
+
+All 22 commented entries agree as of this writing. Re-run it after any change to
+`mn_rules`; the comments exist precisely so this check is possible, which is why
+every number entry carries one.
+
+The general lesson is broader than Mongolian: a test suite that asserts stored
+output cannot detect that the stored output drifted from its source of truth.
+The check has to compare the two derivations against each other, not either one
+against a recorded constant.
+
+## 22. з/ц: the contrast was in the wrong parameter
+
+A native listener reported no distinction at all between заа and цаа. The rules
+are right -- з is `ts`, ц is `tsh`, so the contrast is aspiration, which is the
+Khalkha contrast. The defect was in the phoneme table.
+
+**Not amplitude.** §10d already records that investigation: з is written 119/151
+and ц 81/104, which looks inverted, but they use different source waveforms, the
+rendered output already had ц louder as the speaker has it, and raising ц
+measured +4.5 dB too hot and was reverted. That result still stands.
+
+**Duration.** Nobody had compared the source *envelopes*. Every audible
+aspiration pair in this table has a long unaspirated-to-aspirated duration ratio;
+the affricate pair had almost none:
+
+| pair | unasp | asp | ratio |
+|---|---|---|---|
+| т/т`h` | 13.9 ms | 48.6 ms | 3.50 |
+| п/п`h` | 36.6 ms | 57.9 ms | 1.58 |
+| к/х | 55.9 ms | 81.2 ms | 1.45 |
+| ж/ч | 55.0 ms | 72.3 ms | 1.31 |
+| **з/ц** | **98.1 ms** | **120.0 ms** | **1.22** |
+
+Worse, `ustop/ts_unasp` and `ustop/ts` are both *rising* frication ramps --
+51 46 50 51 55 58 61 60 57 and 48 53 55 57 58 61 60 62 65 63 65 64 in 10 ms
+frames. Neither has a burst. Two slow crescendos of sibilance 22 ms apart are
+not a stop contrast, which is exactly what the listener reported.
+
+**Fix.** з moves to `ustop/ts2`: 55.6 ms, same alveolar sibilant family
+(centroid 6227 Hz against ts_unasp's 5659), and what Armenian, Georgian and
+Latvian use for plain [ts]. The ratio becomes 2.16.
+
+Amplitude was then retuned *by measuring the rendered onset*, not by copying the
+old parameter -- ts2 peaks above ts_unasp, so the first attempt (151 -> 107) came
+out 3 dB hot and would have inverted the ц-louder relationship §10d validated
+against the speaker. 151 -> 76 and 119 -> 60 hold the rendered level constant.
+
+Measured before and after, `заа` / `цаа`:
+
+| | before | after |
+|---|---|---|
+| duration gap | 21 ms | 61 ms |
+| onset frame 1 | 58 / 53 dB | 60 / 53 dB |
+| peak in first 60 ms | 65 / 65 dB | 65 / 65 dB |
+
+The level relationship is preserved; the temporal contrast is created. з now
+starts abruptly and reaches the vowel in 40 ms, ц climbs for 60 ms first.
+
+**The general point.** §10d correctly ruled out amplitude and the table was left
+alone, but "the parameter I checked is fine" is not "the phoneme is fine". When a
+contrast is inaudible, enumerate every parameter that could carry it -- level,
+duration, envelope shape, spectrum -- before concluding the pair is correct.
+
+### Open: the back-harmony г burst
+
+`ustop/k_unasp_` was chosen for its spectrum (centroid 2576 Hz, closest of any
+candidate to the speaker's 1838) and that choice stands. Its envelope, though,
+is 55 56 64 in 10 ms frames -- energy *peaks at the end* and rises into the
+vowel, so there is no release transient. Every correctly-shaped burst decays
+(`k_unasp` 60 58 56, `k_asp` 60 65 58 62 62 56 57 57, `q` a single frame). This
+matches a listener report of г being "weak" without being able to say how.
+
+Level is not the problem: q renders within 1.4 dB of both the front-harmony
+allophone `k` and of х.
+
+No other sample fits -- the dark ones (`k_asp2` 2171 Hz, `k_asp_a` 2240 Hz) are
+98-112 ms aspirated, and every short one is bright (`k_unasp2` 5973,
+`ki_unasp2` 6670, `c` 4774). A time-reversed copy of `k_unasp_` -- identical
+magnitude spectrum, envelope 63 59 55 -- was built and tested against it. The
+listener heard no improvement and the copy was deleted; §24 explains why the
+test could not have worked. The envelope observation itself still stands and
+may matter once word-initial voicing is solved.
+
+## 23. г was voiceless, and a 20 ms hole after it
+
+A native listener: "г sounds like K in all of it" -- in every position, and in
+both arms of a burst-envelope A/B that had not touched voicing.
+
+**The cause.** Every Mongolian г allophone was declared `vls`. `q` was
+`vls uvl stp`, `k` was `vls vel stp`. Khalkha's stop contrast is aspiration and
+not voicing, which is why the whole plain series was written voiceless -- but
+the plain series is *lenis*, and voiced intervocalically, and a fully devoiced
+unaspirated velar stop simply is a [k]. The listener was describing the feature
+name in the table.
+
+eSpeak has had a real voiced stop all along (`phsource/phonemes`, phoneme `g`):
+`FMT(g/g) addWav(x/g2, 150)` with a `PreVoicing` branch. Mongolian never used it.
+
+Chosen in a blind A/B/C -- A voiceless (current), B voiced stop, C voiced with
+the back allophone as a continuant. B won. C revisited ground the listener had
+already rejected once, but that earlier test compared a stop against a fricative
+without varying voicing, so "stop beats fricative" and "voiced beats voiceless"
+had never been separated. B winning means the earlier answer stood and only
+needed voicing added.
+
+### The 20 ms hole
+
+B was better but "still needs something". Measuring it found a digital-silence
+frame after every back-harmony г: `гал` rendered `62 62 59 57 -180 65` in 10 ms
+frames. `гэр` did not.
+
+The difference was one keyword. `q`'s `Vowelin` carried `gpaus`, which
+`compiledata.c` encodes as transition flag 64 and `synthesize.c:653` executes as
+
+```c
+if (flags & 0x40)
+    DoPause(20, 0); // add a short pause after the consonant
+```
+
+A 20 ms closure silence is correct for a voiceless [q] and wrong for a voiced
+one. Removing it is the whole fix.
+
+Measured as the longest run of *exact zero* samples inside the word:
+
+| word | before | after |
+|---|---|---|
+| гал | 20 ms | none |
+| аг | 20 ms | none |
+| агаар | 20 ms | none |
+| бага | 18 ms | 18 ms -- but at 17 ms, which is the initial **б**, not г |
+| en `ago` (control) | 0.1 ms | 0.1 ms |
+
+English was the control that made this legible: eSpeak's voiced stops produce a
+*voice bar* through the closure (`ago` runs `58 58 58 58 58 61 60 58` and never
+reaches zero), so the Mongolian silence was a Mongolian defect, not an engine
+limit.
+
+`богд` is unchanged and that is correct -- its г is `q` too, but it precedes a
+consonant, and `Vowelin` only applies before a vowel, so the pause never fired.
+
+### Two things that did not work
+
+- **`lengthmod 2` -> `5`.** Tried here, appeared to change nothing, and was
+  reverted. That was wrong: the metric in use could not see it. With a stable
+  metric it is worth 4.5 dB and it is now applied -- see §24.
+- **A burst-envelope A/B.** `k_unasp_` peaks at its *end* (`55 56 64`) where
+  every correct burst decays, so a time-reversed copy was built and tested. The
+  listener heard no improvement, because the defect was voicing and the test did
+  not vary voicing. The copy has been deleted.
+
+### What the language model got right, and wrong
+
+Asked six one-line questions in Mongolian, no transcription: it said intervocalic
+г does not fully block the airflow (1), that voicing continues through г (5), and
+that voicing is the main thing separating г from к and х (6). Those three agreed
+with each other, with the measurement, and with the listener, and are what
+confirmed the direction.
+
+It also said г is one single sound with no back/front difference (4). The
+listener had already chosen the uvular/velar split by ear in an earlier test, so
+that answer was not acted on. Same pattern as before: reliable on short
+constrained questions about the language, unreliable the moment the question
+turns phonetic.
+
+### Still open
+
+б and д are still `vls` with the same silent closures -- `аба` has 45 ms and
+18 ms of exact zeros, `ада` 45 ms. If Khalkha's plain series is lenis as a
+series, they have the defect that г just had. Nobody has reported them as wrong,
+so they are recorded here rather than changed.
+
+## 24. г: what is fixed, what is not, and a measurement that lied
+
+The voicing change in §23 was not enough: "both are incorrect, it sounds like К
+or Х". Getting from there to a defensible answer took throwing away two rounds
+of numbers, so both the result and the failures are recorded.
+
+### The metric was broken
+
+The first attempt located the closure as `argmin` of the high band over a window,
+then read the low band at that frame. When the high band has two near-equal
+minima the index flips to an adjacent frame, worth about 7 dB. The same build --
+verified by hashing `phondata` -- measured 35.1, 28.1 and 35.0 dB on consecutive
+runs. Everything derived from it was discarded, including a reported
+"41.3 -> 26.7 dB, +14 dB" for `lengthmod 5`, a claim that `brk` was harmful (it
+helps), and a claim that the voice's `consonant_ampv` helped (it does nothing).
+
+The fix is to stop letting the metric choose its own window. For a VCV token with
+exactly one consonant, the deepest low-band dip anywhere inside the word *is*
+that consonant, and no frame has to be picked:
+
+```python
+lo  = [low_band_energy(frame) for frame in word]
+dip = max(lo) - min(lo[int(0.2*n):int(0.8*n)])
+```
+
+Stable to 0.1 dB across rebuilds. All figures below use it.
+
+### The English comparison was also invalid
+
+A second round compared Mongolian against English and concluded г sat 17 dB short
+with 12 dB unexplained. That does not hold either. The dip is strongly
+pitch-dependent: driving one voice with `-p` moves `ама` from 45.1 dB to 19.0 dB,
+and English `amma` from 28.4 to 10.8. Mongolian runs at a different base pitch,
+so any cross-voice figure measures the pitch difference as much as the phoneme.
+
+**Only within-voice comparisons are valid.** The right reference is this voice's
+own genuinely-voiced consonants.
+
+### Where г stands
+
+| mn token | dip |
+|---|---|
+| `ага` -- fully voiceless, before §23 | 41.3 dB |
+| `ага` -- `lengthmod 5` | 36.8 dB |
+| `ага` -- plus `brk` on `Vowelout` | **33.2 dB** |
+| `ана` / `ама` / `ала` -- properly voiced | 33.0 / 34.9 / 35.7 dB |
+
+г is no longer an outlier: it now sits with м, н and л in the same voice.
+
+Every lever was rebuilt and measured separately. Only two moved it:
+
+| change | dip |
+|---|---|
+| **`lengthmod 2` -> `5`** | 41.3 -> 36.8 dB |
+| **`brk` on `Vowelout`** | 36.8 -> 33.2 dB |
+| `FMT(g/g, 255)` | no change |
+| `addWav` 150 -> 20, or removed entirely | no change |
+| `f1=2`, dropping `rms=`, `voicingswitch` | no change (<=0.1 dB) |
+| `Q"` continuant instead of a stop | worse |
+| voice `consonants`, `breath`, `formant 1` | no change |
+
+Note the metric's limit: `аха` also measures 33.9 dB, because a voiceless
+fricative has continuous noise and never dips. It separates stops-with-silence
+from everything else, not voiced from voiceless.
+
+### Not fixed: word-initial г
+
+Both applied changes act on the transition out of a **preceding vowel**.
+Word-initial г has none, so neither reaches it. A rendered A/B confirms it:
+`бага`, `агаар`, `аг`, `байгууллага` move by 2.1-3.5 dB, while `гал`, `газар`,
+`гол`, `гэр`, `гүн` are byte-identical to the unchanged build.
+
+That matters, because the original report was about `га`. Intervocalic and final
+г are improved; **initial г is untouched** and needs a different mechanism --
+most likely the `PreVoicing` / `FMT(g/xg)` branch, which fires but does not
+carry.
+
+### Process note
+
+Three harness runs were killed by a timeout mid-variant, leaving mutated source
+behind, because a `finally` block does not run when the process is killed. The
+first went unnoticed until the next run adopted the mutated file as its baseline
+and produced an A/B whose two halves were identical. Keep one known measurement
+as an anchor and check the tree against it before trusting the next result --
+`ага` is that anchor here.

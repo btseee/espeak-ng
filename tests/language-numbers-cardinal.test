@@ -43,9 +43,9 @@ test_phon mn "ts'U:N ts'U:N nek X'OjO#rtsU: XOjO#r q'Urwa#NtsU: tS'ara#Nthaw" "1
 # of doervoen myanga and 10000 arav myanga instead of arvan myanga. Hundreds
 # above get this right. See docs/languages/xgn/mn.md, "Numbers". Fixing it means
 # setting langopts.numbers2 for mn; when that happens this line must change.
-test_phon mn "nek mj'aNq@ qUra#w mj'aNq@ t8r8#w mj'aNq@_| ara#w mj'aNq@ ts'U:N mj'aNq@" "1000 3000 4000 10000 100000"
+test_phon mn "nek mj'aNq@ qUrwa#N mj'aNq@ t8rw8#N mj'aNq@_| 'arwa#N mj'aNq@ ts'U:N mj'aNq@" "1000 3000 4000 10000 100000"
 test_phon mn "nek mj'aNq@ nek s'aja nek th'erpUm" "1000 1000000 1000000000"
-test_phon mn "th'aw tS'ara#Nt8r8#w ts'U:N X'Ori#NqUra#w t8r8#w mj'aNq@ q'Urwa#NtsU: th'awi#NtOlO:_| 'arwa#Nt8r8#w mj'aNq@_! ts'Urqa:NtsU: n'aja#NqUra#w t'OlO:NtsU: t'8tShi#NXOjO#r mj'aNq@_! q'Urwa#NtsU: th'awi#Njes tsUrqa: s'aja_! t'8rw8#NtsU: t'ala#Nthaw mj'aNq@_! q'Urwa#NtsU: X'Ori#NnaIm" "5 64 123 4357 14683 742359 6475328"
+test_phon mn "th'aw tS'ara#Nt8r8#w ts'U:N X'Ori#NqUra#w t8rw8#N mj'aNq@ q'Urwa#NtsU: th'awi#NtOlO:_| 'arwa#Nt8r8#w mj'aNq@_! ts'Urqa:NtsU: n'aja#NqUra#w t'OlO:NtsU: t'8tShi#NXOjO#r mj'aNq@_! q'Urwa#NtsU: th'awi#Njes tsUrqa:N s'aja_! t'8rw8#NtsU: t'ala#Nthawa#N mj'aNq@_! q'Urwa#NtsU: X'Ori#NnaIm" "5 64 123 4357 14683 742359 6475328"
 
 test_phon it "dz'E*o_| 'items" "0 items" "NUM_SINGLE_VOWEL"
 test_phon sk "dv'ana:st; t;'isi:ts_! t@-*'ist'o St'i*itsat;p'&t;" "12345" "mixed"

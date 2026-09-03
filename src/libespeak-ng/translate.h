@@ -485,6 +485,7 @@ typedef struct {
 #define NUM2_ORDINAL_DROP_VOWEL    0x00080000 // drop final vowel from cardial number before adding ordinal suffix (currently only tens and units)
 #define NUM2_ZERO_TENS             0x00100000 // say zero tens
 #define NUM2_FRACTION_FEMININE     0x00200000 // use feminine units in decimal fractions
+#define NUM2_ATTRIBUTIVE           0x00400000 // use the _%de form of the final unit when a word follows the number
 
 #define NUM2_THOUSANDPLEX_VAR_THOUSANDS 0x00000002
 #define NUM2_THOUSANDPLEX_VAR_MILLIARDS 0x00000008
@@ -550,6 +551,14 @@ typedef struct {
 	// words and mangled the suffix (МОНГОЛын -> m'ONqO# l#'iN). False for every
 	// language that does not set it, leaving the CamelCase behaviour unchanged.
 	bool caps_keep_suffix;
+
+	// NULL-terminated list of words after which a numeral keeps its ISOLATED
+	// form, as UTF-8. Used with NUM2_ATTRIBUTIVE: a numeral before a noun is
+	// attributive ("5 км" is таван километр) but before a conjunction, clitic
+	// or particle it is not ("5 юм" is тав юм). Those followers are a closed
+	// class, so they are listed rather than guessed at. NULL means every
+	// following word counts as attributive.
+	const char * const *attributive_stop_words;
 
 	// NULL-terminated list of clause-final interrogative particles, as UTF-8
 	// words. A clause ending in one of these takes the question intonation

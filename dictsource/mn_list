@@ -91,6 +91,9 @@ _9C     j'es8#NtsU:
 _1MA1   mj'aNq@
 _0MA1   mj'aNq@
 _0M1    mj'aNq@
+// Attributive before a noun: "1000 хүн" is нэг мянган хүн. Same number_control
+// bit as _%de, so NUM2_ATTRIBUTIVE drives it. сая and тэрбум do not change form.
+_0M1e   mj'aNqa#N
 _1MA2   s'aja
 _0MA2   s'aja
 _0M2    s'aja
@@ -101,7 +104,34 @@ _1MA4   'ixnaja:t
 _0MA4   'ixnaja:t
 _0M4    'ixnaja:t
 
-_dpt    tsheq
+// Attributive forms, used when the numeral modifies a following noun: тав is
+// "five" but "5 км" is таван километр. Selected by NUM2_ATTRIBUTIVE, which sets
+// the _%de variant for the FINAL unit only -- the tens above are already
+// attributive (хорин, not хорь), and 1 and 2 do not change, so they are absent
+// and fall through to _1 and _2.
+// Before a scale word (мянга, сая): "5000" is таван мянга. Always, regardless
+// of what follows -- this is the _%da key, distinct from _%de below.
+_3a     qUrwa#N
+_4a     t8rw8#N
+_5a     thawa#N
+_6a     tsUrqa:N
+_7a     tOlO:N
+_8a     naIma#N
+_9a     jes8#N
+_10a    'arwa#N
+
+_3e     qUrwa#N
+_4e     t8rw8#N
+_5e     thawa#N
+_6e     tsUrqa:N
+_7e     tOlO:N
+_8e     naIma#N
+_9e     jes8#N
+_10e    'arwa#N
+
+// "3.14" is гурван бүхэл арван дөрөв, not "гурав цэг ...". Confirmed with a
+// Mongolian specialist.
+_dpt    pyxe#l#
 
 
 // ============================================================
@@ -120,7 +150,7 @@ _:      tawX@r'tsheq
 _"      XaIm@r'XaSil#th
 _<      paq@'themtek
 +       nem@x           $max3
-%       XUwj            $max3
+%       XUw;            $max3
 =       thentshe:       $max3
 #       Sar
 /       tsUra:s         $max3
@@ -298,7 +328,7 @@ _,      thasl#@l#
 троллейбус      thrOl#l#eIpUs
 такси           thakhsi
 самолёт         samOl#jOth
-вагон           waQ"ON
+вагон           waqON
 бензин          pentsiN
 дизель          titsel;
 мотор           mOthOr
@@ -400,6 +430,18 @@ _,      thasl#@l#
 ХБНГУ   'Xe,pe,en,ke,U  // Холбооны Бүгд Найрамдах Герман Улс
 ААН     'atS,aXUIn,nektS // аж ахуйн нэгж
 ЗГ      'tse,ke         // Засгийн газар
+
+// Academic and professional titles.
+//
+// проф. read as "проф"; it now expands. $dot stops the abbreviating dot being
+// PRONOUNCED, but not the clause break it causes -- that decision is made in
+// readclause.c before translation, so "проф. Бат" still carries a pause. Fixing
+// that is sentence-boundary detection, which belongs in a text frontend.
+//
+// д-р is NOT here on purpose: the hyphen splits it into two separate words
+// (`д` and `р`, confirmed with -X), so no dictionary key can ever match it.
+проф    phrOfessOr      $dot
+дэд     tet             $u      // дэд проф., дэд захирал -- unstressed modifier
 ЭМЯ     'e,em,ja        // Эрүүл Мэндийн Яам
 БШУЯ    'pe,Se,U,ja     // Боловсрол Шинжлэх Ухааны Яам
 ГХЯ     'ke,Xe,ja       // Гадаад Харилцааны Яам
@@ -476,15 +518,19 @@ _,      thasl#@l#
 //  too: 21-р is хорин нэгдүгээр, so only _1o is consulted for the units.
 
 _#-р    r
+// Roman numerals reach the same ordinal forms by a different route:
+// TranslateRoman rebuilds the number as "21 <roman_suffix>" with a SPACE, so the
+// suffix arrives without the hyphen and needs its own entry. Same value.
+_#р     r
 
 _1o     n'ekty#ke:              // нэгдүгээр
-_2o     X'OjO#rtU#Q"a:          // хоёрдугаар
-_3o     q'Ura#wtU#Q"a:          // гуравдугаар
+_2o     X'OjO#rtU#qa:          // хоёрдугаар
+_3o     q'Ura#wtU#qa:          // гуравдугаар
 _4o     t'8r8#wty#ke:           // дөрөвдүгээр
-_5o     th'awtU#Q"a:            // тавдугаар
-_6o     ts'Urqa:tU#Q"a:         // зургаадугаар
-_7o     t'OlO:tU#Q"a:           // долоодугаар
-_8o     n'aImtU#Q"a:            // наймдугаар
+_5o     th'awtU#qa:            // тавдугаар
+_6o     ts'Urqa:tU#qa:         // зургаадугаар
+_7o     t'OlO:tU#qa:           // долоодугаар
+_8o     n'aImtU#qa:            // наймдугаар
 _9o     j'esty#ke:              // есдүгээр
 
 // The teens have explicit cardinal words (_11.._19), so the composition never
@@ -492,30 +538,30 @@ _9o     j'esty#ke:              // есдүгээр
 // and December. Written like their cardinals: one initial stress, no internal
 // space -- a space inside a value truncates the entry.
 _11o    'arwa#Nnekty#ke:        // арван нэгдүгээр
-_12o    'arwa#NXOjO#rtU#Q"a:    // арван хоёрдугаар
-_13o    'arwa#NqUra#wtU#Q"a:    // арван гуравдугаар
+_12o    'arwa#NXOjO#rtU#qa:    // арван хоёрдугаар
+_13o    'arwa#NqUra#wtU#qa:    // арван гуравдугаар
 _14o    'arwa#Nt8r8#wty#ke:     // арван дөрөвдүгээр
-_15o    'arwa#NthawtU#Q"a:      // арван тавдугаар
-_16o    'arwa#NtsUrqa:tU#Q"a:   // арван зургаадугаар
-_17o    'arwa#NtOlO:tU#Q"a:     // арван долоодугаар
-_18o    'arwa#NnaImtU#Q"a:      // арван наймдугаар
+_15o    'arwa#NthawtU#qa:      // арван тавдугаар
+_16o    'arwa#NtsUrqa:tU#qa:   // арван зургаадугаар
+_17o    'arwa#NtOlO:tU#qa:     // арван долоодугаар
+_18o    'arwa#NnaImtU#qa:      // арван наймдугаар
 _19o    'arwa#Njesty#ke:        // арван есдүгээр
 
-_10o    'ara#wtU#Q"a:           // аравдугаар
-_20o    X'OrjtU#Q"a:            // хорьдугаар
-_30o    q'UtShtU#Q"a:           // гучдугаар
+_10o    'ara#wtU#qa:           // аравдугаар
+_20o    X'Or;tU#qa:            // хорьдугаар
+_30o    q'UtShtU#qa:           // гучдугаар
 _40o    t'8tShty#ke:            // дөчдүгээр
-_50o    th'awjtU#Q"a:           // тавьдугаар
-_60o    tS'artU#Q"a:            // жардугаар
-_70o    t'al#tU#Q"a:            // далдугаар
-_80o    n'aja#tU#Q"a:           // наядугаар
+_50o    th'aw;tU#qa:           // тавьдугаар
+_60o    tS'artU#qa:            // жардугаар
+_70o    t'al#tU#qa:            // далдугаар
+_80o    n'aja#tU#qa:           // наядугаар
 _90o    j'erty#ke:              // ердүгээр
 
 // The scale words use their own keys (numbers.c), not _100o / _1000o.
-_0Co    ts'U:tU#Q"a:            // зуудугаар
-_0M1o   mj'aNqa#tU#Q"a:         // мянгадугаар
-_0M2o   s'aja#tU#Q"a:           // саядугаар
-_0M3o   th'erpU#mtU#Q"a:        // тэрбумдугаар
+_0Co    ts'U:tU#qa:            // зуудугаар
+_0M1o   mj'aNqa#tU#qa:         // мянгадугаар
+_0M2o   s'aja#tU#qa:           // саядугаар
+_0M3o   th'erpU#mtU#qa:        // тэрбумдугаар
 
 
 // ============================================================
